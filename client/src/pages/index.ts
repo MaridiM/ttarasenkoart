@@ -1,0 +1,5 @@
+export { default as Home } from './Home'
+export { default as Gallery } from './Gallery'
+export { default as Cv } from './Cv'
+export { default as Texts } from './Texts'
+export { default as Contact } from './Contact'
