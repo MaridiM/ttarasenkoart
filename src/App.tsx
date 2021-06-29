@@ -1,37 +1,19 @@
-import { FC } from 'react'
-import { Route, RouteComponentProps, Switch, withRouter } from 'react-router-dom' 
-import classnames from 'classnames'
-
-import '@fortawesome/fontawesome-free/css/all.css'
-import 'styles/main.css'
-
-import { Contact, Cv, Gallery, Home, Texts } from 'pages'
+import { Gallery, GalleryAdd, GalleryEdit } from 'pages'
 import { paths } from 'paths'
-import { Header, Footer } from 'components'
-
+import { FC } from 'react'
+import { Switch, Route } from 'react-router-dom'
 
 type TProps = {}
 
-const App: FC<RouteComponentProps<TProps>> = ({location}) => {
-  return (
-      <div className={classnames(
-        location.pathname === paths.main || location.pathname === paths.home  ? 'home' : 'page',
-        location.pathname === paths.contact && 'page-contact',
-      )}>
-        <Header />
-
+const App: FC<TProps> = () => {
+    return (
         <Switch>
-            <Route exact path={[paths.home, paths.main]} component={Home} />
-            <Route exact path={paths.gallery} component={Gallery} />
-            <Route exact path={paths.cv} component={Cv} />
-            <Route exact path={paths.texts} component={Texts} />
-            <Route exact path={paths.contact} component={Contact} />
-            <Route exact path={'*'} component={Home} />
-        </Switch>  
-
-        <Footer /> 
-      </div>
-  );
+            <Route exact path={paths.admin} component={Gallery} />
+            <Route exact path={paths.admin+paths.gallery} component={Gallery} />
+            <Route exact path={paths.admin+paths.gallery+paths.add} component={GalleryAdd} />
+            <Route exact path={paths.admin+paths.gallery+paths.edit} component={GalleryEdit} />
+        </Switch>
+    )
 }
 
-export default withRouter(App)
+export default App

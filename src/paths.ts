@@ -1,10 +1,6 @@
-import { TPaths } from "./types";
-
-export const paths: TPaths = {
-    main: '/',
-    home: '/home',
-    cv: '/cv',
+export const paths = {
+    admin: '/admin',
     gallery: '/gallery',
-    contact: '/contact',
-    texts: '/texts',
+    add: '/add',
+    edit: '/edit',
 }
