@@ -22,11 +22,11 @@ const Header = () => {
             <nav className={burger ? 'active' : ''}>
                 <div className="mobMenu" onClick={() => setBurger(!burger)}><i className="fas fa-bars"></i></div>
 
-                <div onClick={() => setBurger(false)}><Link to={paths.home} >Home</Link></div>
-                <div><Link to={paths.gallery} onClick={() => setBurger(false)}>Gallery</Link></div>
-                <div><Link to={paths.cv} onClick={() => setBurger(false)}>CV</Link></div>
-                <div><Link to={paths.texts} onClick={() => setBurger(false)}>Texts</Link></div>
-                <div><Link to={paths.contact} onClick={() => setBurger(false)}>Contact Me</Link></div>
+                <div onClick={() => setBurger(false)}><Link to={paths.home}>Home</Link></div>
+                <div onClick={() => setBurger(false)}><Link to={paths.gallery} >Gallery</Link></div>
+                <div onClick={() => setBurger(false)}><Link to={paths.cv} >CV</Link></div>
+                <div onClick={() => setBurger(false)}><Link to={paths.texts} >Texts</Link></div>
+                <div onClick={() => setBurger(false)}><Link to={paths.contact} >Contact Me</Link></div>
             </nav>
         </header>
     )
