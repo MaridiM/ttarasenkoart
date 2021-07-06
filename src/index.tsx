@@ -2,6 +2,8 @@ import ReactDOM from 'react-dom'
 import {  BrowserRouter as Router } from 'react-router-dom' 
 
 import App from './App'
+import 'styles/index.sass'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 ReactDOM.render(
     <Router>

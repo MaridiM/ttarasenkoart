@@ -7,12 +7,14 @@ type TProps = {}
 
 const App: FC<TProps> = () => {
     return (
-        <Switch>
-            <Route exact path={paths.admin} component={Gallery} />
-            <Route exact path={paths.admin+paths.gallery} component={Gallery} />
-            <Route exact path={paths.admin+paths.gallery+paths.add} component={GalleryAdd} />
-            <Route exact path={paths.admin+paths.gallery+paths.edit} component={GalleryEdit} />
-        </Switch>
+        <div className="page">
+            <Switch>
+                <Route exact path={paths.admin} component={Gallery} />
+                <Route exact path={paths.admin+paths.gallery} component={Gallery} />
+                <Route exact path={paths.admin+paths.gallery+paths.add} component={GalleryAdd} />
+                <Route exact path={paths.admin+paths.gallery+paths.edit} component={GalleryEdit} />
+            </Switch>
+        </div>
     )
 }
 

@@ -1,1 +1,4 @@
-export { default as TabsComponent } from './TabsComponent'
+export { Header } from './Header'
+export { GalleryList } from './GalleryList'
+export { PhotoInput } from './PhotoInput'
+export { AddPicture } from './AddPicture'
