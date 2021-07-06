@@ -1,4 +1,17 @@
-export const MAIL_JS_USER_ID: string = 'user_6uhWVC8HhId47OnV3vERh'
-export const MAIL_JS_ACCESS_TOKEN: string = '1b42a4a435abc6b6691555da149842c9'
-export const MAIL_JS_SERVICE_ID: string = 'service_3kxi212'
-export const MAIL_JS_TEMPLATE_ID: string = 'template_355lvzs'
+import { ISessionOptions, ICorsOptions } from './types'
+
+export const PORT: string | number = process.env.PORT || 8000
+export const SESSION_SECRET: string = process.env.SESSION_SECRET || 'soMeSecreTCodE'
+export const CLIENT_HOST: string = process.env.CLIENT_HOST || 'localhost:3000'
+
+export const sessionOptions: ISessionOptions = {
+    key: 'token',
+    secret: SESSION_SECRET,
+    resave: false,
+    rolling: true,
+    saveUninitialized: false,
+}
+
+export const corsOptions: ICorsOptions = {
+    origin: `http://${CLIENT_HOST}`
+}

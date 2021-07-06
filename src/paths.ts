@@ -1,10 +1,16 @@
-import { TPaths } from "./types";
-
-export const paths: TPaths = {
+export default {
+    // main paths
     main: '/',
     home: '/home',
-    cv: '/cv',
+    category: '/category',
     gallery: '/gallery',
     contact: '/contact',
-    texts: '/texts',
+    signIn: '/login',
+    logOut: '/logout',
+
+    // Actions paths
+    add: '/add',
+    edit: '/edit/:id',
+    remove: '/remove/:id'
+
 }

@@ -1,8 +1,10 @@
-export type TPaths = {
-    main: string
-    home: string
-    cv: string
-    gallery: string
-    contact: string
-    texts: string 
+export interface ISessionOptions {
+    key: string,
+    secret: string,
+    rolling: boolean,
+    resave: boolean,
+    saveUninitialized: boolean,
+}
+export interface ICorsOptions {
+    origin: string
 }

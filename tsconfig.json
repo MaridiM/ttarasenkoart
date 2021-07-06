@@ -1,40 +1,30 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "bin",
+    "module": "commonjs",
+    "target": "es6",
+    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "sourceMap": true,
     "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "src",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "importHelpers": false,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "esnext.asynciterable"
-    ],
-    "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": false,
-    "noUnusedLocals": true,
-    "outDir": "build/bin",
-    "resolveJsonModule": true,
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
     "strictNullChecks": true,
+    "strict": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es6"
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "resolveJsonModule": true,
   },
   "include": [
-    "src"
+      "src/**/*"
   ],
   "exclude": [
     "node_modules",
@@ -43,5 +33,6 @@
     "acceptance-tests",
     "webpack",
     "jest",
+    "src/setupTests.ts"
   ]
 }
