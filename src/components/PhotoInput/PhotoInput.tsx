@@ -19,8 +19,6 @@ const PhotoInput: FC<IProps> = ({ uploading, fileUrl, onChange, required}) => {
         event.preventDefault()
         return uploadInputRef.current?.click()
     }
-    console.log(fileUrl)
-
     return (
         <div className={sass.container} >
             <input 
@@ -33,7 +31,14 @@ const PhotoInput: FC<IProps> = ({ uploading, fileUrl, onChange, required}) => {
                 ref={uploadInputRef} 
                 required={required}
             />
-            <button className={sass.buttonImage} onClick={uploadHandleInput}>
+            <button 
+                style={{
+                    boxShadow: (!uploading && fileUrl) ? 'none' : '', 
+                    background: (!uploading && fileUrl) ? 'none' : '' 
+                }}
+                className={sass.buttonImage} 
+                onClick={uploadHandleInput}
+            >
                 <div className={sass.image} >
                     { uploading && <i className="fas fa-spinner"></i>}
                     { !uploading && fileUrl 

@@ -1,4 +1,6 @@
 export { Header } from './Header'
 export { GalleryList } from './GalleryList'
 export { PhotoInput } from './PhotoInput'
+export { SortPicture } from './SortPicture'
+export { Picture } from './Picture'
 export { AddPicture } from './AddPicture'

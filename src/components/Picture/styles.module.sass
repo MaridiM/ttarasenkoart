@@ -1,0 +1,101 @@
+.picture
+    width: 1000px
+    height: 500px
+    background: #fff
+    border-radius: 10px
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .3)
+    overflow: hidden
+    display: flex
+    cursor: default
+    .img
+        width: 500px
+        height: 500px
+        overflow: hidden
+        display: flex
+        align-items: center
+        justify-content: center
+        img
+            width: auto
+            max-width: 490px
+            height: 98%
+    .body
+        width: 100% 
+        max-width: 500px
+        height: 500px
+        border-left: 1px solid rgba(0, 0, 0, .1)
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        header
+            width: 100%
+            height: 50px
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 0 20px
+            border-bottom: 1px solid rgba(0, 0, 0, .1)
+            font-size: 22px
+            text-shadow: 0 0 1px rgba(0, 0, 0, .2)
+            span
+                font-size: 18px
+                color: rgba(0, 0, 0, .5)
+        ul
+            width: 100%
+            height: calc(100% - 100px)
+            max-height: 400px
+            padding: 20px
+            font-size: 20px
+            li
+                height: 40px
+                width: 100%
+                display: flex
+                align-items: center
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                .param
+                    display: flex
+                    align-items: center
+                    height: 40px
+                    width: 150px
+                    color: rgba(0, 0, 0, .6)
+                    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+            .inStock 
+                color: green
+            .sold 
+                color: red
+        footer
+            width: 100%
+            height: 50px
+            display: flex
+            align-items: center
+            justify-content: center
+            border-top: 1px solid rgba(0, 0, 0, .1)
+            button
+                text-shadow: 0 0 1px rgba(0, 0, 0, .2)
+                height: 100%
+                padding: 0 20px
+                outline: none
+                border: none
+                background: none
+                font-size: 18px
+                color: #222
+                cursor: pointer
+                &:nth-child(1):hover
+                        color: orange
+                &:nth-child(2):hover
+                        color: red
+                &:nth-child(3)
+                    color: rgba(0,0,0, .5)
+                    margin-left: auto
+                    margin-right: 0
+                &:nth-child(3):hover
+                        color: blue
+
+    &Wrapper
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        top: 0
+        left: 0
+        background: rgba(255, 255, 255, .5)
+        width: 100%
+        height: 100vh
+        z-index: 1
