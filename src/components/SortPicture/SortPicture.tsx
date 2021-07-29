@@ -1,53 +1,19 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import sass from './styles.module.sass'
 
 type TCategory = {
     id: string
     name: string
 }
+type TProps = {
+    categories: TCategory[]
+    availability: TCategory[]
+    setSort: (value: string) => void
+    sort: string
+}
 
-const SortPicture: FC = () => {
-    const [ sort, setSort ] = useState<string>('all')
-    const [
-        categories, 
-        // setCategories
-    ] = useState<TCategory[]>([
-        {
-            "id" : "all",
-            "name" : "All"
-        },
-        {
-            "id" : "stil-life",
-            "name" : "Stil Life"
-        },
-        {
-            "id" : "nude",
-            "name" : "Nude"
-        },
-        {
-            "id": "portrait",
-            "name": "Portrait"
-        },
-        {
-            "id": "drawing",
-            "name": "Drawing"
-        },
-        {
-            "id": "figurative",
-            "name": "Figurative"
-        }
-    ])
-
-     const availability: TCategory[] = [
-        {
-            "id" : "sold",
-            "name" : "Sold"
-        },
-        {
-            "id" : "inStock",
-            "name" : "In Stock"
-        },
-    ]
+const SortPicture: FC<TProps> = ({categories, availability, setSort, sort }) => {
+   
     return (
         <ul className={sass.category}>
             {
@@ -61,7 +27,7 @@ const SortPicture: FC = () => {
                     </li>
                 )
             }
-            <hr />
+            { window.innerWidth >= 769 && <hr />}
             {
                 availability!.map(a => 
                     <li

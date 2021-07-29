@@ -1,0 +1,47 @@
+.input
+    margin: 9px 0 2.5px 0
+    width: 100%
+    &:nth-child(1)
+        margin-top: 0     
+.select
+    position: relative
+    display: flex
+    align-items: center
+    width: 100%
+    .btn_add
+        height: 48px
+        min-width: 48px
+        border-radius: 50%
+        font-size: 16px
+        margin: 5px 0 0 15px
+        background: #007FFF
+        border: none
+        outline: none
+        color: #fff
+        &:hover
+            transition: .3s all
+            background: lighten(#007FFF, 5%)
+    .active_btn
+        background: #f44336
+        &:hover
+            transition: .3s all
+            background: lighten(#f44336, 5%)
+    .input
+        margin: 9px 0 2.5px 0
+    &List
+        position: absolute
+        z-index: 2
+        margin: 0 0.5%
+        width: 99%
+        max-height: 128px
+        box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, .20)
+        overflow: auto
+        background: #fff
+        li
+            padding: 0 15px
+            height: 32px
+            line-height: 34px
+            font-size: 16px
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+            &:hover
+                background: rgba(0, 0, 0, .15)

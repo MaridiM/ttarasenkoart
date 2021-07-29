@@ -6,23 +6,21 @@ import sass from './styles.module.sass'
 type TProps = {}
 
 const Header: FC<RouteComponentProps<TProps>> = ({location}) => {
-    const galleryPath = paths.admin+paths.gallery
-    const addPicturePath = paths.admin+paths.gallery+paths.add
     return (
         <header className={sass.header}>
             <nav className={sass.headerNav}>
                 <ul className={sass.headerNavList}>
                     <li>
                         <Link 
-                            to={galleryPath} 
-                            className={location.pathname === galleryPath ? sass.active : ''} 
+                            to={paths.gallery} 
+                            className={location.pathname === paths.gallery ? sass.active : ''} 
                             >Gallery
                         </Link>
                     </li>
                     <li>
                         <Link 
-                            to={addPicturePath} 
-                            className={location.pathname === addPicturePath ? sass.active : ''}
+                            to={paths.add} 
+                            className={location.pathname === paths.add ? sass.active : ''}
                             >Add Picture
                         </Link>
                     </li>

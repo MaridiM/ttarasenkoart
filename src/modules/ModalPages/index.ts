@@ -1,0 +1,1 @@
+export { default as ModalPages } from './ModalPages'
