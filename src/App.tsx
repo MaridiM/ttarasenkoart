@@ -1,11 +1,14 @@
 import { Auth, Gallery } from 'pages'
 import { paths } from 'paths'
 import { FC } from 'react'
-import { Switch, Route, withRouter, RouteComponentProps } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
+import { useAuthAPI } from 'api'
+
 
 type TProps = {}
 
 const LoginAmin: FC = () => {
+
     return ( 
         <Switch>
             <Route exact path={[
@@ -13,28 +16,30 @@ const LoginAmin: FC = () => {
                 paths.gallery,
                 paths.add,
                 paths.edit(),
-                paths.picture(),
-                '*'
+                paths.picture()           
             ]} component={Gallery} />
+            <Redirect from='*' to={paths.admin} />
         </Switch>
     )
 }
 const LogoutAdmin: FC = () => {
     return ( 
         <Switch>
-            <Route exact path={[paths.admin, paths.auth]} component={Auth} />
-            <Route exact path={'*'} component={Auth} />
+            <Route exact path={paths.admin} component={Auth} />
+            <Redirect from={'*'} to={paths.admin} />
         </Switch>
     )
 }
 
-const App: FC<RouteComponentProps<TProps>> = ({ location }) => {
-    const auth: boolean = true
+const App: FC<TProps> = () => {
+    const { isAuth } = useAuthAPI()
+
     return (
         <div className='page'>
-            {auth ? <LoginAmin /> : <LogoutAdmin />} 
+            {isAuth ? <LoginAmin /> : <LogoutAdmin />} 
         </div>
     )
 }
 
-export default withRouter(App)
+export default App
+

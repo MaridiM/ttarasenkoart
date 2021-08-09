@@ -1,17 +1,9 @@
 import { paths } from "paths"
 import { FC } from "react"
 import { Link } from "react-router-dom"
+import { TPicture } from "types"
 import sass from './styles.module.sass'
 
-type TPicture = {
-    id: number | string
-    name: string
-    category: string
-    availability: string
-    type: string
-    size: string
-    image: string
-}
 type TProps = {
     picture: TPicture
     removePicture: (id: string | number) => void

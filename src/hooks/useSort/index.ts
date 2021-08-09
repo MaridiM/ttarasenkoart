@@ -1,14 +1,6 @@
 import { useEffect, useState } from 'react';
+import { TPicture } from 'types';
 
-type TPicture = {
-    id: number | string
-    name: string
-    category: string
-    availability: string
-    type: string
-    size: string
-    image: string
-}
 
 export const useSort = (data: TPicture[]) => {
     const [ sort, setSort ] = useState<string>('all')

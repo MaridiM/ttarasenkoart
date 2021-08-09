@@ -3,6 +3,7 @@ import { Picture } from 'modules/Picture'
 import { PictureForm } from 'modules/PictureForm'
 import { paths } from 'paths'
 import { FC } from 'react'
+import { TCategory, TPicture, TPictureForm } from 'types'
 import sass from './styles.module.sass'
 
 
@@ -13,30 +14,6 @@ type TProps = {
     path: string
     picture: TPicture
 }
-type TCategory = {
-    id: string
-    name: string
-}
-type TPicture = {
-    id: number | string
-    name: string
-    category: string
-    availability: string
-    type: string
-    size: string
-    image: string
-}
-type TFormState = {
-    id?: string | number
-    name: string
-    category: string
-    availability: string
-    type: string
-    size: string
-    image: string 
-    uploading: boolean
-    file?: Blob
-}
 
 const ModalPages: FC<TProps>  = ({
     availability,
@@ -46,7 +23,7 @@ const ModalPages: FC<TProps>  = ({
     picture
 }) => {
 
-    const { form, setForm, onChange, onSubmit } = useForm<TFormState>({
+    const { form, setForm, onChange, onSubmit } = useForm<TPictureForm>({
         name: '',
         category: '',
         availability: 'In stock',

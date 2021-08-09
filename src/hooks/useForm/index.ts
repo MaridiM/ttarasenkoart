@@ -31,9 +31,10 @@ export const useForm = <T> (initialForm: T) => {
             [name]: value
         }))
     } 
-    const onSubmit = (e):void => {
+    const onSubmit = (e, action: any):void => {
         e.preventDefault()
         console.log(form)
+        action(form)
         // if(form.name || form.image || form.category) toast.error('Its work?')
     }
     return {

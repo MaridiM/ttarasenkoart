@@ -5,30 +5,18 @@ import sass from './styles.module.sass'
 import { SelectInput } from 'components/SelectInput'
 import { Link } from 'react-router-dom'
 import { paths } from 'paths'
+import { TCategory, TPictureForm } from 'types'
 
 type TProps = {
     availability: TCategory[]
     categories: TCategory[]
     onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
     onSubmit: any
-    form: TFormState
+    form: TPictureForm
     path: string
     pictureID: string | number 
 }
-type TCategory = {
-    id: string
-    name: string
-}
-type TFormState = {
-    name: string
-    category: string
-    availability: string
-    type: string
-    size: string
-    image: string 
-    uploading: boolean
-    file?: Blob
-}
+
 
 const PictureForm: FC<TProps>  = ({
     availability,

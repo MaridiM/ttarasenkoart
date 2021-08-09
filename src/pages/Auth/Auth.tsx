@@ -1,20 +1,18 @@
 import { TextField } from '@material-ui/core'
+import { useAuthAPI } from 'api'
 import { useForm } from 'hooks'
 import { FC } from 'react'
+import { TAuthForm } from 'types'
 import sass from './styles.module.sass'
 
 type TProps = {}
-type TFormState = {
-    login: string,
-    password: string
-}
-
 
 const Gallery: FC<TProps>  = () => {
-    const { form, onChange, onSubmit } = useForm<TFormState>({
+    const { form, onChange, onSubmit } = useForm<TAuthForm>({
         login: '',
         password: ''
     })
+    const { _login } = useAuthAPI()
 
     return (
         <div className={sass.auth}>
@@ -23,7 +21,7 @@ const Gallery: FC<TProps>  = () => {
                 <TextField
                     required
                     name='login'
-                    label='Title'
+                    label='Login'
                     variant='outlined'
                     value={form.login}
                     onChange={onChange}
@@ -38,8 +36,9 @@ const Gallery: FC<TProps>  = () => {
                     value={form.password}
                     onChange={onChange}
                     className={sass.input}
+                    autoComplete="off" 
                 />
-                <button type="submit" className={sass.btn} onClick={onSubmit}>Log In</button>
+                <button type="submit" className={sass.btn} onClick={(e) => onSubmit(e, _login)}>Log In</button>
             </form>
         </div>
     )

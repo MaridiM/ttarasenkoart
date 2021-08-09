@@ -1,0 +1,1 @@
+export { pictureAPI } from './pictures'

@@ -2,10 +2,12 @@ import { paths } from "paths"
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom'
 import { FC } from "react"
 import sass from './styles.module.sass'
+import { useAuthAPI } from "api"
 
 type TProps = {}
 
 const Header: FC<RouteComponentProps<TProps>> = ({location}) => {
+    const { _logout } = useAuthAPI()
     return (
         <header className={sass.header}>
             <nav className={sass.headerNav}>
@@ -24,7 +26,7 @@ const Header: FC<RouteComponentProps<TProps>> = ({location}) => {
                             >Add Picture
                         </Link>
                     </li>
-                    <li><button onClick={() => console.log('Log Out')}>Log Out</button></li>
+                    <li><button onClick={_logout}>Log Out</button></li>
                 </ul>
             </nav>
         </header>

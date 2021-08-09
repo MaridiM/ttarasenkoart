@@ -1,3 +1,4 @@
+import { useCategoryAPI } from 'api'
 import { Header } from 'components'
 import { useSort } from 'hooks'
 import { 
@@ -10,61 +11,13 @@ import {
     RouteComponentProps,
     withRouter
 } from 'react-router-dom'
+import { TPicture } from 'types'
 
 type TProps = {}
-type TPicture = {
-    id: number | string
-    name: string
-    category: string
-    availability: string
-    type: string
-    size: string
-    image: string
-}
-type TCategory = {
-    id: string
-    name: string
-}
 
 const Gallery: FC<RouteComponentProps<TProps>>  = ({ location }) => {
-    const [ categories, 
-        // setCategories 
-    ] = useState<TCategory[]>([
-        // {
-        //     "id" : "all",
-        //     "name" : "All"
-        // },
-        {
-            "id" : "still_life",
-            "name" : "Still Life"
-        },
-        {
-            "id" : "nude",
-            "name" : "Nude"
-        },
-        {
-            "id": "portrait",
-            "name": "Portrait"
-        },
-        {
-            "id": "drawing",
-            "name": "Drawing"
-        },
-        {
-            "id": "figurative",
-            "name": "Figurative"
-        }
-    ])
-    const availability: TCategory[] = [
-        {
-            "id" : "sold",
-            "name" : "Sold"
-        },
-        {
-            "id" : "in stock",
-            "name" : "In stock"
-        },
-    ]
+    const { categories, availability } = useCategoryAPI()
+
     const [picture, setPicture] = useState<TPicture>({
             id: '',
             name: '',

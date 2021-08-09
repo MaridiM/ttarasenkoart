@@ -1,10 +1,7 @@
 import { FC } from 'react'
+import { TCategory } from 'types'
 import sass from './styles.module.sass'
 
-type TCategory = {
-    id: string
-    name: string
-}
 type TProps = {
     categories: TCategory[]
     availability: TCategory[]

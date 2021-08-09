@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/classnames": "^2.3.1",
     "@types/node": "^12.20.15",
     "@types/react-router-dom": "^5.1.7",

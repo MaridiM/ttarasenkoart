@@ -1,16 +1,7 @@
 import { FC } from 'react'
 import sass from './styles.module.sass'
 import { GalleryList, SortPicture } from 'components'
-
-type TPicture = {
-    id: number | string
-    name: string
-    category: string
-    availability: string
-    type: string
-    size: string
-    image: string
-}
+import { TCategory, TPicture } from 'types'
 
 type TProps = {
     availability: TCategory[]
@@ -21,10 +12,7 @@ type TProps = {
     setSort: (value: string) => void
     sort: string
 }
-type TCategory = {
-    id: string
-    name: string
-}
+
 
 const Gallery: FC<TProps>  = ({
     availability,
