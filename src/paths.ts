@@ -1,16 +1,18 @@
-export default {
-    // main paths
+import { IPath } from "./types";
+
+const basePath: string = '/api'
+export const paths: IPath = {
     main: '/',
-    home: '/home',
-    category: '/category',
-    gallery: '/gallery',
-    contact: '/contact',
-    signIn: '/login',
-    logOut: '/logout',
-
-    // Actions paths
-    add: '/add',
-    edit: '/edit/:id',
-    remove: '/remove/:id'
-
+    auth: `${basePath}/auth`,
+    pictures: `${basePath}/picture`,
+    categories: `${basePath}/categories`,
+    
+    add: `/add`,
+    picture: `/:id`,
+    edit: `/edit/:id`,
+    remove: `/remove/:id`,
+    
+    
+    login: `/login`,
+    logout: `/logout`,
 }

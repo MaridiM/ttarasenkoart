@@ -1,0 +1,26 @@
+[
+	{
+		"id" : "all",
+		"name" : "All"
+	},
+	{
+		"id" : "stil-life",
+		"name" : "Still Life"
+	},
+	{
+		"id" : "nude",
+		"name" : "Nude"
+	},
+	{
+		"id": "portrait",
+		"name": "Portrait"
+	},
+	{
+		"id": "drawing",
+		"name": "Drawing"
+	},
+	{
+		"id": "figurative",
+		"name": "Figurative"
+	}
+]
