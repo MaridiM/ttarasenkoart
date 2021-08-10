@@ -16,7 +16,7 @@ export const useSort = (data: TPicture[]) => {
             const res = data.filter(p => p.category === sort)
             setPictures([...res])
         }
-    }, [sort])
+    }, [sort, data])
     
     return {
         sort,

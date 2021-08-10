@@ -12,7 +12,12 @@ type TUseCategoryApi = {
 
 export const useCategoryAPI = (): TUseCategoryApi => { 
     const [loading, setLoading ] = useState<boolean>(false)
-    const [categories, setCategories ] = useState<TCategory[]>([])
+    const [categories, setCategories ] = useState<TCategory[]>([
+        {
+            id: 'all',
+            name: 'All'
+        }
+    ])
     const availability: TCategory[] = [
         {
             "id" : "sold",
@@ -28,12 +33,11 @@ export const useCategoryAPI = (): TUseCategoryApi => {
         categoryAPI.categories()
             .then(async ({data: { data }}) => {
                 setLoading(true)
-                setCategories([...data])
-                console.log(data)
+                setCategories(state => [...state, ...data])
                 setLoading(false)
             })
             .catch(({ response: { data: { data, error }}}) => {
-                setCategories([...data])
+                setCategories(state => [...state, ...data])
                 toast.error(error)
             })
     }, [])

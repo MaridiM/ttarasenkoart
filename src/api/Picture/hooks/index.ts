@@ -1,0 +1,1 @@
+export { usePicturesAPI } from './usePicturesAPI'

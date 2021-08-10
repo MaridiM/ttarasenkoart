@@ -1,1 +1,1 @@
-export { pictureAPI } from './pictures'
+export { usePicturesAPI } from './hooks'
