@@ -1,1 +1,821 @@
-[{"id":3,"name":"test","category":"portrait","availability":"in stock","type":"Oil on canvas","size":"60x50 cm","image":"https://www.imgonline.com.ua/examples/bee-on-daisy.jpg"},{"id":1,"name":"In summer","category":"stil-life","availability":"in stock","type":"Oil, acrylic on canvas","size":"75x70 cm","image":"https://res.cloudinary.com/dki4lxdki/image/upload/v1623088218/ttarasenkoart/gallery/stil-life/210_fuo4g6.jpg"},{"id":0,"name":"Gift from Germany","category":"stil-life","availability":"in stock","type":"Oil, acrylic on canvas","size":"100x70 cm","image":"https://res.cloudinary.com/dki4lxdki/image/upload/v1623088217/ttarasenkoart/gallery/stil-life/255_zgps8w.jpg"}]
+[
+    {
+		"id": 90,
+		"name": "Morning",
+		"category": "still-life",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "100x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088216/ttarasenkoart/gallery/60_q3ejur.jpg"
+	},
+    {
+		"id": 89,
+		"name": "Where are you my little prince?",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "100x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087948/ttarasenkoart/gallery/245_yftaaw.jpg"
+	},
+	{
+		"id": 88,
+		"name": "Where are you my little prince?",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "60x50 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087944/ttarasenkoart/gallery/227%D0%B0_v7sv56.jpg"
+	},
+	{
+		"id": 87,
+		"name": "Poems and expectations",
+		"category": "portrait",
+		"availability": "sold",
+		"type": "Oil, Paper, pastel on canvas",
+		"size": "100x55 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087944/ttarasenkoart/gallery/163_lr3zoi.jpg"
+	},
+	{
+		"id": 86,
+		"name": "Little Prince",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil, acrylic  on canvas",
+		"size": "100x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087953/ttarasenkoart/gallery/237_nxislo.jpg"
+	},
+	{
+		"id": 85,
+		"name": "Face to face",
+		"category": "figurative",
+		"availability": "in stock",
+		"type": "Oil, acrylic  on canvas",
+		"size": "90x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086797/ttarasenkoart/gallery/256_uavxbg.jpg"
+	},
+	{
+		"id": 84,
+		"name": "Geniuses draw (Mattis)",
+		"category": "figurative",
+		"availability": "in stock",
+		"type": "Oil, acrylic  on canvas",
+		"size": "130x90 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086797/ttarasenkoart/gallery/243_ywzgqb.jpg"
+	},
+	{
+		"id": 83,
+		"name": "Blue jeans",
+		"category": "figurative",
+		"availability": "in stock",
+		"type": "Oil, acrylic  on canvas",
+		"size": "110x100 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086795/ttarasenkoart/gallery/221_uhldlm.jpg"
+	},
+	{
+		"id": 82,
+		"name": "The best friends",
+		"category": "figurative",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "95x55 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086795/ttarasenkoart/gallery/178_ry7h5p.jpg"
+	},
+	{
+		"id": 81,
+		"name": "Peter and his gift",
+		"category": "figurative",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "85x50 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086796/ttarasenkoart/gallery/224_fxthzq.jpg"
+	},
+	{
+		"id": 80,
+		"name": "Paris I love you",
+		"category": "figurative",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "100x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086795/ttarasenkoart/gallery/146_b7pmja.jpg"
+	},
+	{
+		"id": 79,
+		"name": "Alya",
+		"category": "drawing",
+		"availability": "sold",
+		"type": "Pencil on paper",
+		"size": "30x21 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086558/ttarasenkoart/gallery/27_lzbv8k.jpg"
+	},
+	{
+		"id": 78,
+		"name": "Profile",
+		"category": "drawing",
+		"availability": "sold",
+		"type": "Pencil on paper",
+		"size": "30x21 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086557/ttarasenkoart/gallery/29_w4qtpr.jpg"
+	},
+	{
+		"id": 77,
+		"name": "Pencil on paper",
+		"category": "drawing",
+		"availability": "sold",
+		"type": "Pencil on paper",
+		"size": "30х21 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086557/ttarasenkoart/gallery/30_l8divi.jpg"
+	},
+	{
+		"id": 76,
+		"name": "Sketch",
+		"category": "drawing",
+		"availability": "sold",
+		"type": "Ink,acrylic on stained cardboard",
+		"size": "30х21 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086557/ttarasenkoart/gallery/30%D1%8521_vpdkvx.jpg"
+	},
+	{
+		"id": 75,
+		"name": "Sketch",
+		"category": "drawing",
+		"availability": "sold",
+		"type": "Ink on stained cardboard",
+		"size": "30х23 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086557/ttarasenkoart/gallery/30%D1%8523_vb5cnb.jpg"
+	},
+	{
+		"id": 74,
+		"name": "Sketch",
+		"category": "drawing",
+		"availability": "sold",
+		"type": "Ink on stained cardboard",
+		"size": "30x24 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086558/ttarasenkoart/gallery/IMG_3354_tud72j.jpg"
+	},
+	{
+		"id": 73,
+		"name": "Drawing",
+		"category": "drawing",
+		"availability": "in stock",
+		"type": "Ink,acrylic on stained cardboard",
+		"size": "30x23 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086558/ttarasenkoart/gallery/IMG_61800_dzbnfj.jpg"
+	},
+	{
+		"id": 72,
+		"name": "Ink on paper",
+		"category": "drawing",
+		"availability": "in stock",
+		"type": "Ink on paper",
+		"size": "30x21 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086558/ttarasenkoart/gallery/IMG_61890_zwwdxh.jpg"
+	},
+	{
+		"id": 71,
+		"name": "Sitting",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "100x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087074/ttarasenkoart/gallery/246_beiutc.jpg"
+	},
+	{
+		"id": 70,
+		"name": "Expression",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "100x75 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087073/ttarasenkoart/gallery/251_zycehd.jpg"
+	},
+	{
+		"id": 69,
+		"name": "New York",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "95x75 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087940/ttarasenkoart/gallery/95_iodpsa.jpg"
+	},
+	{
+		"id": 68,
+		"name": "Frida",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "95x75 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087946/ttarasenkoart/gallery/253%D0%B0_sdrow5.jpg"
+	},
+	{
+		"id": 67,
+		"name": "Relaxation",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "70x115 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087071/ttarasenkoart/gallery/203_wjxmpn.jpg"
+	},
+	{
+		"id": 66,
+		"name": "(diptych)",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "110x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087074/ttarasenkoart/gallery/eva_om2dgy.jpg"
+	},
+	{
+		"id": 65,
+		"name": "Fighting(giptych)",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "80x180 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087073/ttarasenkoart/gallery/borba1_pd3uxl.jpg"
+	},
+	{
+		"id": 64,
+		"name": "Solitude 2",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "95x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087073/ttarasenkoart/gallery/254_z6yo3s.jpg"
+	},
+	{
+		"id": 63,
+		"name": "Embrace",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "120x85 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087072/ttarasenkoart/gallery/249_pqccgf.jpg"
+	},
+	{
+		"id": 62,
+		"name": "My childhood",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "75x110 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087075/ttarasenkoart/gallery/241%D0%B0_kwjmhh.jpg"
+	},
+	{
+		"id": 61,
+		"name": "Thirst for flight",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "110x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087072/ttarasenkoart/gallery/235_j8sfkm.jpg"
+	},
+	{
+		"id": 60,
+		"name": "I dream'd in a dream",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "100x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087072/ttarasenkoart/gallery/231_dz9fd9.jpg"
+	},
+	{
+		"id": 59,
+		"name": "The red",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "115x50 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087071/ttarasenkoart/gallery/229%D1%81_oc9uku.jpg"
+	},
+	{
+		"id": 58,
+		"name": "Black head",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "80x100 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087070/ttarasenkoart/gallery/218_qkppsm.jpg"
+	},
+	{
+		"id": 57,
+		"name": "3D",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "50x100 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087075/ttarasenkoart/gallery/204_czkhnq.jpg"
+	},
+	{
+		"id": 56,
+		"name": "Fighting",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "85x120 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087070/ttarasenkoart/gallery/202_evbvmo.jpg"
+	},
+	{
+		"id": 55,
+		"name": "The tension",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "110x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087069/ttarasenkoart/gallery/201_aqlxvk.jpg "
+	},
+	{
+		"id": 54,
+		"name": "Two",
+		"category": "nude",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "60x90 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087066/ttarasenkoart/gallery/62_c1k1fb.jpg"
+	},
+	{
+		"id": 53,
+		"name": "Water",
+		"category": "nude",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "80x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087063/ttarasenkoart/gallery/95_phd8xu.jpg"
+	},
+	{
+		"id": 52,
+		"name": "Ginger",
+		"category": "nude",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "85x65 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087063/ttarasenkoart/gallery/101_sv1xfq.jpg"
+	},
+	{
+		"id": 51,
+		"name": "Sonnet",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "80x110 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087063/ttarasenkoart/gallery/110_tlbzff.jpg"
+	},
+	{
+		"id": 50,
+		"name": "By the sea",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "124x61 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087063/ttarasenkoart/gallery/118_iegu9m.jpg"
+	},
+	{
+		"id": 49,
+		"name": "Specular captivity(diptych)",
+		"category": "nude",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "80x110 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087064/ttarasenkoart/gallery/139_zqdxpk.jpg"
+	},
+	{
+		"id": 48,
+		"name": "Specular captivity(diptych)",
+		"category": "nude",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "80x110 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087065/ttarasenkoart/gallery/140_bw7ds4.jpg"
+	},
+	{
+		"id": 47,
+		"name": "The solitude",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "110x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087064/ttarasenkoart/gallery/141_g453d0.jpg"
+	},
+	{
+		"id": 46,
+		"name": "Between heaven and earth",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "70x100 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087065/ttarasenkoart/gallery/142_hvvok1.jpg"
+	},
+	{
+		"id": 45,
+		"name": "Thistle flavour",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "100x150 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087065/ttarasenkoart/gallery/148_hozk8b.jpg"
+	},
+	{
+		"id": 44,
+		"name": "S102",
+		"category": "nude",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "80x100 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087065/ttarasenkoart/gallery/157_lnl9cm.jpg"
+	},
+	{
+		"id": 43,
+		"name": "Behold",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "85x90 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087066/ttarasenkoart/gallery/165_v4vx5f.jpg"
+	},
+	{
+		"id": 42,
+		"name": "Nude",
+		"category": "nude",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "110x65 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087066/ttarasenkoart/gallery/166_wcqwde.jpg"
+	},
+	{
+		"id": 41,
+		"name": "Expression",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "100x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087066/ttarasenkoart/gallery/172_i6zqem.jpg"
+	},
+	{
+		"id": 40,
+		"name": "She (diptych)",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, graphite on canvas",
+		"size": "70x100 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087063/ttarasenkoart/gallery/132a_rprb4k.jpg"
+	},
+	{
+		"id": 39,
+		"name": "He (diptych)",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, graphite on canvas",
+		"size": "70x100 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087065/ttarasenkoart/gallery/133_kzksi4.jpg"
+	},
+	{
+		"id": 38,
+		"name": "Birdie",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "60x50 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087940/ttarasenkoart/gallery/78_q2fbcl.jpg"
+	},
+	{
+		"id": 37,
+		"name": "Dedicated to Fellini",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "92x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087944/ttarasenkoart/gallery/125_dpsmv7.jpg"
+	},
+	{
+		"id": 36,
+		"name": "Moonlight boy",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "100x55 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087946/ttarasenkoart/gallery/145_ypli0e.jpg"
+	},
+	{
+		"id": 35,
+		"name": "My sweet greyhound",
+		"category": "portrait",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "100x50 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087942/ttarasenkoart/gallery/208_lt0xzr.jpg"
+	},
+	{
+		"id": 34,
+		"name": "Woody!",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "95x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087944/ttarasenkoart/gallery/219_nb8lou.jpg"
+	},
+	{
+		"id": 33,
+		"name": "Tany's glasses",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "110x75 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087947/ttarasenkoart/gallery/242_irqcft.jpg"
+	},
+	{
+		"id": 32,
+		"name": "After the performance",
+		"category": "figurative",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "85x55 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086796/ttarasenkoart/gallery/03_hgquyb.jpg"
+	},
+	{
+		"id": 31,
+		"name": "Winter holidays",
+		"category": "figurative",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "90x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086794/ttarasenkoart/gallery/08_xc8le6.jpg"
+	},
+	{
+		"id": 30,
+		"name": "Self-portrait with a cat",
+		"category": "figurative",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "90х70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086794/ttarasenkoart/gallery/16_bgkspv.jpg"
+	},
+	{
+		"id": 29,
+		"name": "The boy in the forest",
+		"category": "figurative",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "90x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086794/ttarasenkoart/gallery/22_mctbsd.jpg"
+	},
+	{
+		"id": 28,
+		"name": "My childhood",
+		"category": "figurative",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "85x65 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086794/ttarasenkoart/gallery/33_xl1vud.jpg"
+	},
+	{
+		"id": 27,
+		"name": "Egyptian cats",
+		"category": "figurative",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "56x123 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086793/ttarasenkoart/gallery/40_ldbrp9.jpg"
+	},
+	{
+		"id": 26,
+		"name": "Friends",
+		"category": "figurative",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "110x90 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086794/ttarasenkoart/gallery/48_gcsqjb.jpg"
+	},
+	{
+		"id": 25,
+		"name": "Sight",
+		"category": "portrait",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "105x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623086794/ttarasenkoart/gallery/53_iyg0gf.jpg"
+	},
+	{
+		"id": 24,
+		"name": "Alya",
+		"category": "portrait",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "90x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087947/ttarasenkoart/gallery/21_n2igog.jpg"
+	},
+	{
+		"id": 23,
+		"name": "Lefa",
+		"category": "portrait",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "70x40 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087946/ttarasenkoart/gallery/Lefa_jyztf8.jpg"
+	},
+	{
+		"id": 22,
+		"name": "Lefa 3/4",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "60x40 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087940/ttarasenkoart/gallery/32_tr7932.jpg"
+	},
+	{
+		"id": 21,
+		"name": "Evening",
+		"category": "portrait",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "80x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087939/ttarasenkoart/gallery/46_otodfd.jpg"
+	},
+	{
+		"id": 20,
+		"name": "Cat-dog",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087944/ttarasenkoart/gallery/47_byc4q5.jpg"
+	},
+	{
+		"id": 19,
+		"name": "Ilja",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "90x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087939/ttarasenkoart/gallery/49_v9si5s.jpg"
+	},
+	{
+		"id": 18,
+		"name": "My love",
+		"category": "portrait",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "85x50 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087940/ttarasenkoart/gallery/71_banvz9.jpg"
+	},
+	{
+		"id": 17,
+		"name": "The view ",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "90x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087066/ttarasenkoart/gallery/176_ayydyn.jpg"
+	},
+	{
+		"id": 16,
+		"name": "The dreamer",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "80x110 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087067/ttarasenkoart/gallery/180a_dnuga0.jpg"
+	},
+	{
+		"id": 15,
+		"name": "G",
+		"category": "nude",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "110x65 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087069/ttarasenkoart/gallery/182_kerfhi.jpg"
+	},
+	{
+		"id": 14,
+		"name": "His wings",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "100x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087068/ttarasenkoart/gallery/183-0_eyq16r.jpg"
+	},
+	{
+		"id": 13,
+		"name": "Sight",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "110x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087069/ttarasenkoart/gallery/184_al8wms.jpg"
+	},
+	{
+		"id": 12,
+		"name": "Full moon",
+		"category": "nude",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "100x80 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623087068/ttarasenkoart/gallery/190_dbf5dm.jpg"
+	},
+	{
+		"id": 11,
+		"name": "My favourite breakfast",
+		"category": "still-life",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "60x40 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088216/ttarasenkoart/gallery/35_zwjglo.jpg"
+	},
+	{
+		"id": 10,
+		"name": "Lilac",
+		"category": "still-life",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "90x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088214/ttarasenkoart/gallery/84_uv11xt.jpg"
+	},
+	{
+		"id": 9,
+		"name": "...and Apple",
+		"category": "still-life",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "71x52 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088215/ttarasenkoart/gallery/86_qkmjts.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Summer with friends",
+		"category": "still-life",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "41x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088216/ttarasenkoart/gallery/94_ndtdrw.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Classic))",
+		"category": "still-life",
+		"availability": "in stock",
+		"type": "Oil on canvas",
+		"size": "60x85 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088216/ttarasenkoart/gallery/114_fpzpjd.jpg"
+	},
+	{
+		"id": 6,
+		"name": "...and bird oil",
+		"category": "still-life",
+		"availability": "sold",
+		"type": "Acrylic on canvas",
+		"size": "80x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088215/ttarasenkoart/gallery/167_ixek60.jpg"
+	},
+	{
+		"id": 5,
+		"name": "More love",
+		"category": "still-life",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "70x75 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088216/ttarasenkoart/gallery/169_ovpdbx.jpg"
+	},
+	{
+		"id": 4,
+		"name": "More love 2",
+		"category": "still-life",
+		"availability": "sold",
+		"type": "Oil, acrylic on canvas",
+		"size": "85x60 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088217/ttarasenkoart/gallery/171_q9tmi1.jpg"
+	},
+	{
+		"id": 3,
+		"name": "2014",
+		"category": "still-life",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "70x55 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088217/ttarasenkoart/gallery/255_zgps8w.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Red Wine",
+		"category": "still-life",
+		"availability": "sold",
+		"type": "Oil on canvas",
+		"size": "90x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088217/ttarasenkoart/gallery/179_b2hy7h.jpg"
+	},
+	{
+		"id": 1,
+		"name": "In summer",
+		"category": "still-life",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "75x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088218/ttarasenkoart/gallery/210_fuo4g6.jpg"
+	},
+	{
+		"id": 0,
+		"name": "Gift from Germany",
+		"category": "still-life",
+		"availability": "in stock",
+		"type": "Oil, acrylic on canvas",
+		"size": "100x70 cm",
+		"image": "https://res.cloudinary.com/dki4lxdki/image/upload/v1623088217/ttarasenkoart/gallery/255_zgps8w.jpg"
+	}
+]

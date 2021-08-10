@@ -6,6 +6,8 @@ const router = express.Router()
 
 router.get(paths.main, PictureController.main)
 
+router.get(paths.picture, PictureController.picture)
+
 router.post(paths.add, PictureController.add)
 
 router.post(paths.edit, PictureController.edit)
