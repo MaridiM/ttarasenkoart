@@ -6,7 +6,7 @@ import {
     ModalPages,
 } from 'modules'
 import { paths } from 'paths'
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { 
     RouteComponentProps,
     withRouter
@@ -16,12 +16,18 @@ type TProps = {}
 const Gallery: FC<RouteComponentProps<TProps>>  = ({ location }) => {
     const { categories, availability } = useCategoryAPI()
     const { 
+        getPictures,
         getPicture,
+        addPicture,
+        editPicture,
         removePicture,
         picture,
         pictures: picturesDATA
     } = usePicturesAPI()
 
+    useEffect(() => {
+        getPictures()
+    }, [])
        
     const { sort, setSort, pictures } = useSort(picturesDATA)
     
@@ -37,6 +43,8 @@ const Gallery: FC<RouteComponentProps<TProps>>  = ({ location }) => {
                         availability={availability}
                         categories={categories}
                         removePicture={removePicture}
+                        addPicture={addPicture}
+                        editPicture={editPicture}
                         path={location.pathname}
                         picture={picture}
                     />

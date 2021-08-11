@@ -11,21 +11,25 @@ type TProps = {
     availability: TCategory[]
     categories: TCategory[]
     onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
-    onSubmit: any
     form: TPictureForm
     path: string
     pictureID: string | number 
+    editPicture: (id: string | number, data: TPictureForm) => void
+    addPicture: (data: TPictureForm) => void
+    onSubmit: (e, action: any, id?: string | number) => void
 }
 
 
 const PictureForm: FC<TProps>  = ({
     availability,
     categories,
-    onSubmit,
     onChange,
     form,
     path,
-    pictureID
+    pictureID,
+    editPicture,
+    addPicture,
+    onSubmit
 }) => {
     return (
         <div className={sass.form} >
@@ -55,7 +59,7 @@ const PictureForm: FC<TProps>  = ({
                     <SelectInput 
                         name='category'
                         label='Category'
-                        items={categories}
+                        items={categories.slice(1)}
                         value={form.category}
                         onChange={onChange}
                         addBtn
@@ -88,7 +92,10 @@ const PictureForm: FC<TProps>  = ({
                     <button 
                         type="submit" 
                         className={sass.btn}
-                        onClick={onSubmit}
+                        onClick={(e) => 
+                            path === paths.add ? onSubmit(e, addPicture) : onSubmit(e, editPicture, pictureID)
+                        }
+                        // onClick={(e) => path === paths.add ? addPicture(form) : editPicture(pictureID, form)}
                     >{ path === paths.add ? 'Add picture' : 'Update picture' }</button>
                     <Link 
                         to={paths.gallery}

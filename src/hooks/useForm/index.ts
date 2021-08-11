@@ -1,11 +1,30 @@
+// import { axios } from "api"
+// import { 
+//     REACT_APP_CLOUDINARY_API_KAY,
+//     REACT_APP_CLOUDINARY_API_URL,
+//     REACT_APP_CLOUDINARY_UPLOAD_PRESET
+// } from "config"
 import { ChangeEvent, useState } from "react"
-// import { toast } from 'react-toastify'
 
 
 export const useForm = <T> (initialForm: T) => {
     const [form, setForm] = useState<T>(initialForm)
+    // const [ fData, setFData ] = useState<any>({})
 
-    const onChange = (e: ChangeEvent<any>): void=> {
+    // const uploadFile = async (data: FormData): Promise<void> => {
+    //     // Upload file on Cloudinary
+    //     const {data: { secure_url }} = await axios.post(REACT_APP_CLOUDINARY_API_URL, data)
+    //     if (secure_url) {
+    //         // Set Photo in state from cloudinary
+    //         setForm( state => ({
+    //             ...state,
+    //             image: secure_url,
+    //             uploading: false,
+    //         }))
+    //     } 
+    // }
+
+    const onChange = async (e: ChangeEvent<any>): Promise<void>=> {
         const { name, value, files } = e.target
         
         if(files) {
@@ -13,17 +32,39 @@ export const useForm = <T> (initialForm: T) => {
                 ...state,
                 uploading: true
             }))
-            // Reading file for  showing in browser before upload
+
             let fReader = new FileReader();
+            
             fReader.readAsDataURL(e.target.files[0]);
-            fReader.onloadend = function(e){
+            fReader.onloadend = async (e) =>{
+                // Append file on FormData
+                const formData = new FormData()
+                formData.append('file', files[0])
+                // formData.append('api_kay', REACT_APP_CLOUDINARY_API_KAY)
+                // formData.append('upload_preset', REACT_APP_CLOUDINARY_UPLOAD_PRESET)
+                formData.append('timestamp', String(Date.now() / 1000))
+                
                 setForm( state => ({
                     ...state,
                     image: String(e.target!.result) || '',
                     uploading: false,
-                    file: files[0]
                 }))
-            } 
+                // setFData(formData)
+
+            }
+            
+            // Reading file for  showing in browser before upload, send to server
+            // let fReader = new FileReader();
+            
+            // fReader.readAsDataURL(e.target.files[0]);
+            // fReader.onloadend = function(e){
+            //     setForm( state => ({
+            //         ...state,
+            //         image: String(e.target!.result) || '',
+            //         uploading: false,
+            //         file: files[0]
+            //     }))
+            // } 
         }
 
         setForm( state => ({
@@ -31,11 +72,12 @@ export const useForm = <T> (initialForm: T) => {
             [name]: value
         }))
     } 
-    const onSubmit = (e, action: any):void => {
+    const onSubmit = async (e, action: any, id?: string | number): Promise<void> => {
         e.preventDefault()
-        console.log(form)
-        action(form)
-        // if(form.name || form.image || form.category) toast.error('Its work?')
+        // await uploadFile(fData)
+        console.log('upload')
+        if (!id ) return action(form)
+        return action(id, form)
     }
     return {
         form,

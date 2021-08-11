@@ -11,6 +11,8 @@ type TProps = {
     availability: TCategory[]
     categories: TCategory[]
     removePicture: (id: string | number ) => void
+    editPicture: (id: string | number, data: TPictureForm) => void
+    addPicture: (data: TPictureForm) => void
     path: string
     picture: TPicture
 }
@@ -19,6 +21,8 @@ const ModalPages: FC<TProps>  = ({
     availability,
     categories,
     removePicture,
+    editPicture,
+    addPicture,
     path, 
     picture
 }) => {
@@ -36,6 +40,7 @@ const ModalPages: FC<TProps>  = ({
     const getDataBeforeUpdate = (): void => {
         const c = categories.filter(p => p.id === picture.category)[0]
         const a = availability.filter(p => p.id === picture.availability.toLowerCase())[0]
+        
         setForm(state => ({
             ...state,
             name: picture.name,
@@ -61,10 +66,12 @@ const ModalPages: FC<TProps>  = ({
                     (path === paths.add || path === paths.edit(picture.id)) && <PictureForm 
                         availability={availability} 
                         categories={categories} 
+                        addPicture={addPicture}
+                        editPicture={editPicture}
                         onChange={onChange} 
-                        onSubmit={onSubmit} 
                         form={form} 
                         pictureID={picture.id}
+                        onSubmit={onSubmit}
                         path={path}
                     />
                 }

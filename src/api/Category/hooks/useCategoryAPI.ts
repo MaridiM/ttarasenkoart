@@ -31,7 +31,7 @@ export const useCategoryAPI = (): TUseCategoryApi => {
 
     useEffect(() => {
         categoryAPI.categories()
-            .then(async ({data: { data }}) => {
+            .then(({data: { data }}) => {
                 setLoading(true)
                 setCategories(state => [...state, ...data])
                 setLoading(false)
