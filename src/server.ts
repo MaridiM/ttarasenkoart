@@ -21,11 +21,6 @@ app.use(helmet())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-app.use((req, res, next) => {
-    console.log(req.session['token'])
-    next()
-})
-
 
 app.use(paths.auth, authRoutes)
 app.use(paths.categories, categoriesRoutes)

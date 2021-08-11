@@ -7,7 +7,6 @@ import Users from '../../../db/users.json'
 export const AuthController = {
     login: async (req, res): Promise<IAuth> => {
         try {
-            console.log(req.body)
             if(!req.body) {
                 return res.status(400).json({
                     token: null,

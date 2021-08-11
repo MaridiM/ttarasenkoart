@@ -2,9 +2,19 @@ import { Request, Response } from "express"
 import fs from "fs"
 import path from "path"
 import { IPicture, IPictureController, IPictureResponse } from "../types"
+import cloudinary from 'cloudinary'
+import { REACT_APP_CLOUDINARY_API_KAY, REACT_APP_CLOUDINARY_API_SECRET, REACT_APP_CLOUDINARY_CLOUD_NAME, REACT_APP_CLOUDINARY_UPLOAD_PRESET } from "./../../../config"
+
 
 const filePathPicture = path.join(__dirname, './../../../db/gallery.json')
 const filePathCategory = path.join(__dirname, './../../../db/category.json')
+
+cloudinary.v2.config({ 
+  cloud_name: REACT_APP_CLOUDINARY_CLOUD_NAME, 
+  api_key: REACT_APP_CLOUDINARY_API_KAY, 
+  api_secret: REACT_APP_CLOUDINARY_API_SECRET,
+  secure: true
+});
 
 export const PictureController: IPictureController = {
     main: (req: Request, res: Response): Response<IPictureResponse, Record<string, any>>  => {
@@ -49,31 +59,29 @@ export const PictureController: IPictureController = {
         }
     },
     
-    add: (req: Request, res: Response): Response<IPictureResponse, Record<string, any>> => {
+    add: async (req: Request, res: Response): Promise<Response<IPictureResponse, Record<string, any>>> => {
         try {
             
-            // Validation required inputs
-            if ( req.body.name === '' ) return res.status(204).json({data: [], error: 'Title can not be empty'})
-            if ( req.body.category === '' ) return res.status(204).json({data: [], error: 'Category can not be empty'})
-            if ( req.body.category.toLowerCase() === 'all' ) return res.status(204).json({data: [], error: 'Category can not be all category, please change other'})
-            if ( req.body.image === '' ) return res.status(204).json({data: [], error: 'Image can not be empty'})
-
             // Read file
             const pictures = JSON.parse(fs.readFileSync(filePathPicture, 'utf-8'))
             const categories = JSON.parse(fs.readFileSync(filePathCategory, 'utf-8'))
-
+            
+            // Validation required inputs
+            if ( req.body.name === '' ) return res.status(200).json({data: [...pictures], error: 'Title can not be empty'})
+            if ( req.body.category === '' ) return res.status(200).json({data: [...pictures], error: 'Category can not be empty'})
+            if ( req.body.category.toLowerCase() === 'all' ) return res.status(200).json({data: [...pictures], error: 'Category can not be all'})
+            if ( req.body.image === '' ) return res.status(200).json({data: [...pictures], error: 'Image can not be empty'})
 
             // Add category if it not existing
             const category = !!categories.filter(c => c.id === String(req.body.category.toLowerCase()))
 
-            if(category) {
+            if(!category) {
                 categories.push({
                     id: String(req.body.category.toLowerCase().replace(' ', '-')),
                     name: req.body.category
                 })
                 fs.writeFileSync(filePathCategory, JSON.stringify(categories))
             }
-
 
             // Template new picture
             const newPicture: IPicture = {
@@ -83,9 +91,20 @@ export const PictureController: IPictureController = {
                 availability: req.body.availability || "in stock",
                 type: req.body.type || "",
                 size: req.body.size || "",
-                image: req.body.image || "https://www.imgonline.com.ua/examples/bee-on-daisy.jpg"
+                image: ''
             }
-            
+            // console.log(req.body)
+            await cloudinary.v2.uploader.unsigned_upload(
+                req.body.image, 
+                REACT_APP_CLOUDINARY_UPLOAD_PRESET, 
+                { resource_type: "image" },
+                (error, result) => {
+                    newPicture.image = result.secure_url
+                    console.log(result)
+                }
+            )
+                
+                
             pictures.reverse().push(newPicture)
             pictures.reverse()
             
@@ -106,16 +125,29 @@ export const PictureController: IPictureController = {
 
     edit: (req: Request, res: Response): Response<IPictureResponse, Record<string, any>> => {
         try {
-            // Validation required inputs
-            if ( req.body.name === '' ) return res.status(204).json({data: [], error: 'Title can not be empty'})
-            if ( req.body.category === '' ) return res.status(204).json({data: [], error: 'Category can not be empty'})
-            if ( req.body.category.toLowerCase() === 'all' ) return res.status(204).json({data: [], error: 'Category can not be all category, please change other'})
-            if ( req.body.image === '' ) return res.status(204).json({data: [], error: 'Image can not be empty'})
-
-       
+            
+            
             // Write in file
             const pictures = JSON.parse(fs.readFileSync(filePathPicture, 'utf-8'))
+            const categories = JSON.parse(fs.readFileSync(filePathCategory, 'utf-8'))
             const picture = pictures.filter(pict => String(pict.id) === req.params.id)[0]
+            
+            // Validation required inputs
+            if ( req.body.name === '' ) return res.status(200).json({data: [...pictures], error: 'Title can not be empty'})
+            if ( req.body.category === '' ) return res.status(200).json({data: [...pictures], error: 'Category can not be empty'})
+            if ( req.body.category.toLowerCase() === 'all' ) return res.status(200).json({data: [...pictures], error: 'Category can not be all category, please change other'})
+            if ( req.body.image === '' ) return res.status(200).json({data: [...pictures], error: 'Image can not be empty'})
+            
+            // Add category if it not existing
+            const category = !!categories.filter(c => c.id === String(req.body.category.toLowerCase()))
+
+            if(!category) {
+                categories.push({
+                    id: String(req.body.category.toLowerCase().replace(' ', '-')),
+                    name: req.body.category
+                })
+                fs.writeFileSync(filePathCategory, JSON.stringify(categories))
+            }
 
             // Template new picture
             const newPicture: IPicture = {
@@ -150,7 +182,7 @@ export const PictureController: IPictureController = {
         }
     },
 
-    remove: (req: Request, res: Response): Response<IPictureResponse, Record<string, any>> => {
+    remove: async (req: Request, res: Response): Promise<Response<IPictureResponse, Record<string, any>>> => {
         try {
             // Write in file
             const pictures = JSON.parse(fs.readFileSync(filePathPicture, 'utf-8'))
@@ -174,8 +206,16 @@ export const PictureController: IPictureController = {
                 return
             })
 
+            const imageName = pictures.filter(pict => String(pict.id) === req.params.id)[0].image.split('/')
+
+            await cloudinary.v2.uploader.destroy(
+                `ttarasenkoart/${imageName[imageName.length - 1].split('.')[0]}`,
+                { resource_type: "image" },
+                (error, result) => {console.log(result, error)}
+            )
+
             // Write in file
-            fs.writeFileSync(filePathPicture, JSON.stringify(newPictures))
+            await fs.writeFileSync(filePathPicture, JSON.stringify(newPictures))
             
             return res.status(200).json({
                 data: [...newPictures],
