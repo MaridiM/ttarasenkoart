@@ -4,9 +4,9 @@
   "description": "Server for admin to  ttarasenkoart.com",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node bin/server.js",
+    "start": "npm install @types/node --save-dev && npm run build && node bin/server.js",
     "build": "npm run build-clean",
-    "build-clean": "rm -rf bin && mkdir bin && tsc --traceResolution -p .",
+    "build-clean": "rm -rf bin && mkdir bin && tsc -p .",
     "dev": "cd src && nodemon --exec ts-node server.ts -e ts"
   },
   "repository": {
