@@ -13,7 +13,6 @@ export const AuthController = {
                     error: 'Field can\'t be empty!'
                 })
             }
-            console.log(req.body)
             const { login, password } = req.body
 
             if (login !== Users.login || password !== Users.password) 
