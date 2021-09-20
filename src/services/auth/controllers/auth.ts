@@ -13,6 +13,7 @@ export const AuthController = {
                     error: 'Field can\'t be empty!'
                 })
             }
+            console.log(req.body)
             const { login, password } = req.body
 
             if (login !== Users.login || password !== Users.password) 
@@ -33,7 +34,7 @@ export const AuthController = {
             })
             
         } catch (error) {           
-             return res.status(500).json({token: null, error: error.message})
+             return res.status(500).json({token: null, error: 'Server error'})
         }
     },
     logout: (req, res): IAuth => {
@@ -45,7 +46,7 @@ export const AuthController = {
             })
             
         } catch (error) {           
-             return res.status(500).json({token: null, error: error.message})
+             return res.status(500).json({token: null, error: 'Server error'})
         }
     },
 }

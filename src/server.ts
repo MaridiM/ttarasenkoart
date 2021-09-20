@@ -18,8 +18,9 @@ app.use(cors(corsOptions))
 app.use(session(sessionOptions))
 app.use(cookieParser())
 app.use(helmet())
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb', extended: true}));
+app.use(express.json());
 
 
 app.use(paths.auth, authRoutes)

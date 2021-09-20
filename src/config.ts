@@ -3,7 +3,7 @@ import { ISessionOptions, ICorsOptions } from './types';
 
 export const PORT: string | number = process.env.PORT || 8000
 export const SESSION_SECRET: string = process.env.SESSION_SECRET || 'SOMEsecREtCoDeFoRSEsSiON'
-export const CLIENT_HOST: string = process.env.CLIENT_HOST || 'localhost:3000'
+export const CLIENT_HOST: string = process.env.CLIENT_HOST || '*'
 
 // Cloudinary
 export const REACT_APP_CLOUDINARY_API_KAY: string = process.env.REACT_APP_CLOUDINARY_API_KAY || '821279233882751'
@@ -33,6 +33,6 @@ export const sessionOptions: ISessionOptions = {
 export const cookieOptionsSecret: string = 'SOMEsecREtCoDeFoRCoOkIE'
 
 export const corsOptions: ICorsOptions = {
-    origin: `http://${CLIENT_HOST}`,
+    origin: CLIENT_HOST  || '*',
     credentials: true
 }
