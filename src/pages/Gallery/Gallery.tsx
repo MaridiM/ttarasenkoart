@@ -60,7 +60,7 @@ const Gallery: FC<IProps>  = ({
     useEffect(() => {
         getCategories()
         getPictures()
-    }, [getCategories, getPicture, removePictureState])
+    }, [getCategories, getPicture, getPictures, removePictureState])
        
     const { sort, setSort, pictures } = useSort(picturesDATA)
 
