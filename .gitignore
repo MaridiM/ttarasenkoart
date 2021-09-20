@@ -21,7 +21,7 @@
 
 /node_modules
 /build
-/denta-lab_uml.drawio
+/bin
 
 # Logs
 logs
