@@ -14,7 +14,13 @@ export const CategoryController: ICategoryController = {
             if(!categories) return res.status(200).json({ data: [], error: 'Have no any category' })
             
             return res.status(200).json({
-                data: [...categories], 
+                data: [
+                    {
+                        "id": "all",
+                        "name": "All"
+                    },
+                    ...categories
+                ], 
                 error: null
             })
             

@@ -75,7 +75,7 @@ export const PictureController: IPictureController = {
 
             // Add category if it not existing
             const category = !!categories.filter(c => c.id === String(req.body.category.toLowerCase()))
-
+            console.log(categories)
             if(!category) {
                 categories.push({
                     id: String(req.body.category.toLowerCase().replace(' ', '-')),
@@ -94,7 +94,6 @@ export const PictureController: IPictureController = {
                 size: req.body.size || "",
                 image: ''
             }
-            // console.log(req.body)
             await cloudinary.v2.uploader.unsigned_upload(
                 req.body.image, 
                 REACT_APP_CLOUDINARY_UPLOAD_PRESET, 
@@ -212,7 +211,6 @@ export const PictureController: IPictureController = {
             await cloudinary.v2.uploader.destroy(
                 `ttarasenkoart/${imageName[imageName.length - 1].split('.')[0]}`,
                 { resource_type: "image" },
-                (error, result) => {console.log(result, error)}
             )
 
             // Write in file
