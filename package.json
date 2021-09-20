@@ -4,10 +4,10 @@
   "description": "Server for admin to  ttarasenkoart.com",
   "main": "index.js",
   "scripts": {
-    "start": "npm install @types/node --save-dev && npm run build && node bin/server.js",
-    "build": "npm run build-clean",
-    "build-clean": "rm -rf bin && mkdir bin && tsc -p .",
-    "dev": "cd src && nodemon --exec ts-node server.ts -e ts"
+    "dev": "cd src && nodemon --exec ts-node server.ts -e ts",
+    "start": "cd bin && node .",
+    "prebuild": "rm -rf bin",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
