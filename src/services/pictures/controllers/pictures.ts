@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 import fs from "fs"
 import path from "path"
+import '../../../db/gallery.json'
 import { IPicture, IPictureController, IPictureResponse } from "../types"
 import cloudinary from 'cloudinary'
 import { REACT_APP_CLOUDINARY_API_KAY, REACT_APP_CLOUDINARY_API_SECRET, REACT_APP_CLOUDINARY_CLOUD_NAME, REACT_APP_CLOUDINARY_UPLOAD_PRESET } from "./../../../config"

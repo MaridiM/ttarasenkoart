@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import { ICategoryController, ICategoryResponse } from '../types'
+import '../../../db/category.json'
 import path from 'path'
 import fs from 'fs'
 
