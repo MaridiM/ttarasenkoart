@@ -30,7 +30,7 @@ const Gallery: FC<TProps> = ({
     useEffect(() => {
         getCategories()
         getPictures(category)
-    }, [category])
+    }, [category, getCategories, getPictures])
 
     
     const showBigPicture = (picture: string, blur: boolean): void => setPicture({ blur, picture }) 
