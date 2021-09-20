@@ -1,1 +1,0 @@
-export { useCategoryAPI } from './useCategoryAPI'

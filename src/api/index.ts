@@ -1,5 +1,3 @@
 export { default as axios } from './axios'
-export { useAuthAPI } from './Auth'
-export { useCategoryAPI } from './Category'
-export { usePicturesAPI } from './Picture'
-
+export { categoryAPI } from './categories'
+export { pictureAPI } from './pictures'

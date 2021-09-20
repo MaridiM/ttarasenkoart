@@ -1,1 +1,0 @@
-export { useAuthAPI } from './hooks'
