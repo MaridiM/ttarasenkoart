@@ -3,7 +3,7 @@ import { Picture } from 'modules/Picture'
 import { PictureForm } from 'modules/PictureForm'
 import { paths } from 'paths'
 import { FC } from 'react'
-import { TCategory, TPicture, TPictureForm } from 'types'
+import { TCategory, TPicture, TPictureForm, TStateRemovePicture } from 'types'
 import sass from './styles.module.sass'
 
 
@@ -15,6 +15,7 @@ type TProps = {
     addPicture: (data: TPictureForm) => void
     path: string
     picture: TPicture
+    setRemovePictureState: (value: TStateRemovePicture) => void
 }
 
 const ModalPages: FC<TProps>  = ({
@@ -24,7 +25,8 @@ const ModalPages: FC<TProps>  = ({
     editPicture,
     addPicture,
     path, 
-    picture
+    picture,
+    setRemovePictureState
 }) => {
 
     const { form, setForm, onChange, onSubmit } = useForm<TPictureForm>({
@@ -56,10 +58,11 @@ const ModalPages: FC<TProps>  = ({
         <div className={sass.modal_blur}>
             <div className={sass.modal_window}>
                 {
-                    path === paths.picture(picture.id) && <Picture
+                    path === paths.picture(String(picture.id)) && <Picture
                         picture={picture}
                         removePicture={removePicture}
                         getDataBeforeUpdate={getDataBeforeUpdate}
+                        setRemovePictureState={setRemovePictureState}
                     />
                 }
                 {

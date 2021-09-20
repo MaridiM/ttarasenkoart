@@ -52,7 +52,7 @@ const reducer = (state = initialState, { type, payload, category } ) => {
         case GET_PICTURE:
             return {
                 ...state,
-                picture: { ...payload }
+                picture: { ...payload[0] }
             }
         case ADD_PICTURE:
             return {

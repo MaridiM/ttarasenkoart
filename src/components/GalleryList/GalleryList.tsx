@@ -1,22 +1,24 @@
 import { paths } from 'paths'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
-import { TPicture } from 'types'
+import { TPicture, TStateRemovePicture } from 'types'
 import sass from './styles.module.sass'
 
 type TProps = {
-    removePicture: (id: string | number ) => void
+    removePicture: () => void
     getPicture: (id: string | number ) => void
     data: TPicture[]
+    setRemovePictureState: (value: TStateRemovePicture) => void
 }
 
-const GalleryList: FC<TProps> = ({removePicture, getPicture, data}) => {
+const GalleryList: FC<TProps> = ({getPicture, data, setRemovePictureState}) => {
+    
     
     return (
         <div className={sass.list}>
-            {
+           {
                 data!.map(i => (
-                    <article key={i.id}>
+                    <article key={Math.floor(Math.random() * 999999999)}>
                         <Link to={paths.picture(i.id)} onClick={()=> getPicture(i.id)}>
                             <header>
                                 {i.name}
@@ -29,7 +31,7 @@ const GalleryList: FC<TProps> = ({removePicture, getPicture, data}) => {
                         <footer>
                             <span className={i.availability.toLowerCase() !== 'sold' ? sass.inStock : sass.sold}>{i.availability.toLowerCase()}</span>
                             <span>{i.category}</span>
-                            <button onClick={() => removePicture(i.id)}><i className="fas fa-trash"></i></button>
+                            <button onClick={() => setRemovePictureState({status: true, picture: i})}><i className="fas fa-trash"></i></button>
                         </footer>
                     </article>
                 ))

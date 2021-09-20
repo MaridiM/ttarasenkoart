@@ -46,6 +46,10 @@ export type TPicture = {
     size: string
     image: string
 }
+export type TStateRemovePicture = {
+    picture?: TPicture
+    status?: boolean
+}
 
 // API
 export type TAuthAPI = {

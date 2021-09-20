@@ -1,16 +1,18 @@
 import { paths } from "paths"
 import { FC } from "react"
 import { Link } from "react-router-dom"
-import { TPicture } from "types"
+import { TPicture, TStateRemovePicture } from "types"
 import sass from './styles.module.sass'
 
 type TProps = {
     picture: TPicture
     removePicture: (id: string | number) => void
     getDataBeforeUpdate: () => void
+    setRemovePictureState: (value: TStateRemovePicture) => void
 }
 
-const Picture: FC<TProps> = ({picture, removePicture, getDataBeforeUpdate }) => {
+const Picture: FC<TProps> = ({picture, getDataBeforeUpdate, setRemovePictureState }) => {
+
     return (
         <div className={sass.picture}>
             <div className={sass.img}>
@@ -38,7 +40,7 @@ const Picture: FC<TProps> = ({picture, removePicture, getDataBeforeUpdate }) => 
                 </ul>
                 <footer>
                     <Link to={paths.edit(picture.id)} onClick={getDataBeforeUpdate}>Edit</Link>
-                    <button onClick={() => removePicture(picture.id)}>Remove</button>
+                    <button onClick={() => setRemovePictureState({status: true, picture})}>Remove</button>
                     <button onClick={() => window.location.pathname = paths.gallery}>Cancel</button>
                 </footer>
             </div>

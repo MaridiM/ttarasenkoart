@@ -9,7 +9,7 @@ import {
     ModalPages,
 } from 'modules'
 import { paths } from 'paths'
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { 
     RouteComponentProps,
@@ -23,7 +23,7 @@ import {
     editPicture,
     removePicture
 } from 'store/actions'
-import { TCategory, TPicture, TPictureForm } from 'types'
+import { TCategory, TPicture, TPictureForm, TStateRemovePicture } from 'types'
 
 interface IProps extends RouteComponentProps<any> {
     getCategories: () => void
@@ -51,16 +51,26 @@ const Gallery: FC<IProps>  = ({
     availability,
     categories
 }) => {
-    // const { categories, availability } = useCategoryAPI()
+
+    const [removePictureState, setRemovePictureState] = useState<TStateRemovePicture>({
+        picture: undefined,
+        status: true
+    })
 
     useEffect(() => {
         getCategories()
         getPictures()
-    }, [getCategories, getPictures])
+    }, [getCategories, getPicture, removePictureState])
        
     const { sort, setSort, pictures } = useSort(picturesDATA)
 
     const currentPictureID: string  = location.pathname.split('/')[location.pathname.split('/').length-1]
+
+    const removePictureAction = () => {
+        removePicture(removePictureState.picture!.id)
+        setRemovePictureState({status: false})
+    }
+
     return (
         <div>
             {
@@ -76,6 +86,7 @@ const Gallery: FC<IProps>  = ({
                         editPicture={editPicture}
                         path={location.pathname}
                         picture={picture}
+                        setRemovePictureState={setRemovePictureState}
                     />
                 )
             }
@@ -86,10 +97,12 @@ const Gallery: FC<IProps>  = ({
                 availability={availability}
                 categories={categories}
                 pictures={pictures}
-                removePicture={removePicture}
+                removePicture={removePictureAction}
                 setSort={setSort}
                 sort={sort}
                 getPicture={getPicture}
+                removePictureState={removePictureState}
+                setRemovePictureState={setRemovePictureState}
             />
         </div>
     )
