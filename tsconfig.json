@@ -9,7 +9,6 @@
     "allowJs": true,
     "moduleResolution": "node",
     "rootDir": "src",
-    "types": [ "node" ],
     "typeRoots": [ "node_modules/@types" ],
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
