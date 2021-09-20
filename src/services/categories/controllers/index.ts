@@ -1,1 +1,1 @@
-export { CategoriesController } from './categories'
+export { CategoryController } from './categories'
