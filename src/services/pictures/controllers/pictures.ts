@@ -74,9 +74,8 @@ export const PictureController: IPictureController = {
             if ( req.body.image === '' ) return res.status(200).json({data: [...pictures], error: 'Image can not be empty'})
 
             // Add category if it not existing
-            const category = !!categories.filter(c => c.id === String(req.body.category.toLowerCase()))
-            console.log(categories)
-            if(!category) {
+            const category = categories.filter(c => c.id === String(req.body.category.toLowerCase().replace(' ', '-')))
+            if(!category.length) {
                 categories.push({
                     id: String(req.body.category.toLowerCase().replace(' ', '-')),
                     name: req.body.category
@@ -86,7 +85,7 @@ export const PictureController: IPictureController = {
 
             // Template new picture
             const newPicture: IPicture = {
-                id: pictures.length,
+                id: pictures.length+1,
                 name: req.body.name,
                 category: String(req.body.category.toLowerCase().replace(' ', '-')),
                 availability: req.body.availability || "in stock",
@@ -100,7 +99,6 @@ export const PictureController: IPictureController = {
                 { resource_type: "image" },
                 (error, result) => {
                     newPicture.image = result.secure_url
-                    console.log(result)
                 }
             )
                 
