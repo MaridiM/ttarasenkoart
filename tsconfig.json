@@ -9,7 +9,8 @@
     "allowJs": true,
     "moduleResolution": "node",
     "rootDir": "src",
-    "types": ["node"],
+    "types": [ "node" ],
+    "typeRoots": [ "node_modules/@types" ],
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -30,6 +31,7 @@
   "exclude": [
     "node_modules",
     "build",
+    "bin",
     "scripts",
     "acceptance-tests",
     "webpack",
