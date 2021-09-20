@@ -1,10 +1,9 @@
 import { useState } from 'react';
-// import { AuthContext } from './../AuthContext';
 import { authAPI } from './../auth';
 import { TAuthForm } from 'types'
 import { paths } from 'paths'
 import { useEffect } from 'react'
-import { toast } from 'react-toastify';
+import { toast } from 'react-toastify'
 
 type TUseAuthAPI = {
     _login: (data: TAuthForm) => void
@@ -28,9 +27,11 @@ export const useAuthAPI = (): TUseAuthAPI => {
 
 
     const _login = async (data: TAuthForm): Promise<void> => {
+        console.log(data)
         await authAPI.login(data)
-            .then( async ({data: { token, error }}) => {
+            .then(({data: { token, error }}) => {
                 if(!token) return toast.error(error || 'Token is not valid')
+                console.log(token)
 
                 localStorage.setItem('jwt_token', token)
                 return document.location.pathname = paths.gallery

@@ -1,6 +1,6 @@
-import { TPictureForm, TPictureAPIResponse, TPictureAPI } from '../../types';
-import { pathsAPI } from '../../paths'
-import axios from '../axios'
+import { TPictureForm, TPictureAPIResponse, TPictureAPI } from '../types';
+import { pathsAPI } from '../paths'
+import axios from './axios'
 import { AxiosResponse } from 'axios';
 
 export const pictureAPI: TPictureAPI = {

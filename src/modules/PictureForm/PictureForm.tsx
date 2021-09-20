@@ -95,7 +95,6 @@ const PictureForm: FC<TProps>  = ({
                         onClick={(e) => 
                             path === paths.add ? onSubmit(e, addPicture) : onSubmit(e, editPicture, pictureID)
                         }
-                        // onClick={(e) => path === paths.add ? addPicture(form) : editPicture(pictureID, form)}
                     >{ path === paths.add ? 'Add picture' : 'Update picture' }</button>
                     <Link 
                         to={paths.gallery}

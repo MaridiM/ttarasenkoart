@@ -1,4 +1,7 @@
-import { useCategoryAPI, usePicturesAPI } from 'api'
+// import { 
+//     useCategoryAPI, 
+//     // usePicturesAPI
+// } from 'api'
 import { Header } from 'components'
 import { useSort } from 'hooks'
 import { 
@@ -7,30 +10,56 @@ import {
 } from 'modules'
 import { paths } from 'paths'
 import { FC, useEffect } from 'react'
+import { connect } from 'react-redux'
 import { 
     RouteComponentProps,
     withRouter
 } from 'react-router-dom'
-type TProps = {}
+import { 
+    getCategories,
+    getPictures,
+    getPicture,
+    addPicture,
+    editPicture,
+    removePicture
+} from 'store/actions'
+import { TCategory, TPicture, TPictureForm } from 'types'
 
-const Gallery: FC<RouteComponentProps<TProps>>  = ({ location }) => {
-    const { categories, availability } = useCategoryAPI()
-    const { 
-        getPictures,
-        getPicture,
-        addPicture,
-        editPicture,
-        removePicture,
-        picture,
-        pictures: picturesDATA
-    } = usePicturesAPI()
+interface IProps extends RouteComponentProps<any> {
+    getCategories: () => void
+    getPictures: () => void
+    getPicture: (id: string | number) => void
+    addPicture: (dataForm: TPictureForm) => void
+    editPicture: (id: string | number, dataForm: TPictureForm) => void
+    removePicture: (id: string | number) => void
+    pictures: TPicture[]
+    picture: TPicture
+    availability: TCategory[]
+    categories: TCategory[]
+}
+
+const Gallery: FC<IProps>  = ({ 
+    location,
+    getCategories,
+    getPictures,
+    getPicture,
+    addPicture,
+    editPicture,
+    removePicture,
+    picture,
+    pictures: picturesDATA,
+    availability,
+    categories
+}) => {
+    // const { categories, availability } = useCategoryAPI()
 
     useEffect(() => {
+        getCategories()
         getPictures()
-    }, [])
+    }, [getCategories, getPictures])
        
     const { sort, setSort, pictures } = useSort(picturesDATA)
-    
+
     const currentPictureID: string  = location.pathname.split('/')[location.pathname.split('/').length-1]
     return (
         <div>
@@ -65,5 +94,20 @@ const Gallery: FC<RouteComponentProps<TProps>>  = ({ location }) => {
         </div>
     )
 }
+const mapStateToProps = (state, ownProp) => ({
+    pictures: state.pictures,
+    picture: state.picture,
+    availability: state.availability,
+    categories: state.categories
+})
 
-export default withRouter(Gallery)
+const mapDispatchToProps = {
+    getCategories,
+    getPictures,
+    getPicture,
+    addPicture,
+    editPicture,
+    removePicture
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Gallery))

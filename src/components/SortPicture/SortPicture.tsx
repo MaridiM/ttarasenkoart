@@ -10,7 +10,6 @@ type TProps = {
 }
 
 const SortPicture: FC<TProps> = ({categories, availability, setSort, sort }) => {
-   
     return (
         <ul className={sass.category}>
             {

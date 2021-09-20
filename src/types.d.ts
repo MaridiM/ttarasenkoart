@@ -79,3 +79,11 @@ export type TPictureAPIResponse = {
     pictures: TPicture[] | TPicture | null
     error: string | null
 }
+
+// Redux
+export type TCategories = {
+    availability: TCategory[] | []
+    categories: TCategory[] | []
+    pictures: TPicture[] | []
+    picture: TPicture
+}
