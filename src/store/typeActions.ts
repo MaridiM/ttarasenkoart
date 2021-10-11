@@ -1,0 +1,6 @@
+// CATEGORIES
+export const GET_CATEGORIES = 'GET_CATEGORIES'
+
+// PICTURES
+export const GET_PICTURES = 'GET_PICTURES'
+export const GET_PICTURE = 'GET_PICTURE'

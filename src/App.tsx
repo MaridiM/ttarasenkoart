@@ -26,7 +26,7 @@ const App: FC<RouteComponentProps<TProps>> = ({location}) => {
             <Route exact path={paths.cv} component={Cv} />
             <Route exact path={paths.texts} component={Texts} />
             <Route exact path={paths.contact} component={Contact} />
-            <Route exact path={'*'} component={Home} />
+            <Route path={'*'} component={Home} />
         </Switch>  
 
         <Footer /> 

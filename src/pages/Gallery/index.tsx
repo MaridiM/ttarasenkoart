@@ -1,29 +1,36 @@
 import { FC, useState, useEffect } from 'react'
-import categoryJSON from 'data/category.json'
-import galleryJSON from 'data/gallery.json'
+import { connect } from 'react-redux'
+import { getCategories, getPictures } from 'store/actions'
 
 type TPictureState = {
     blur: boolean
     picture: string
 }
+type TProps = {
+    getPictures
+    getCategories
+    categories
+    pictures
+}
 
-const Gallery: FC = () => {
+const Gallery: FC<TProps> = ({
+    getPictures,
+    getCategories,
+    categories,
+    pictures
+}) => {
     const [category, setCategory] = useState<string>('all')
-    const [hoverId, setHoverId] = useState<number | null>(null )
-    const [gallery, setGallery] = useState<Array<any>>([])
-    const [loading, setLoading] = useState<boolean>(true)
+    const [hoverId, setHoverId] = useState<number | string | null>(null )
     const [showPicture, setPicture] = useState<TPictureState>({
         blur: false,
         picture: ''
+        
     })
     
-    useEffect(()=> {
-        const filteredGallery = galleryJSON.filter(item => item.category === category)
-        setGallery(filteredGallery)
-        category === 'all' && setGallery(galleryJSON)
-        setLoading(false)
-
-    }, [category])
+    useEffect(() => {
+        getCategories()
+        getPictures(category)
+    }, [category, getCategories, getPictures])
 
     
     const showBigPicture = (picture: string, blur: boolean): void => setPicture({ blur, picture }) 
@@ -33,7 +40,7 @@ const Gallery: FC = () => {
         <div className="gallery-page">
             <div className="category">
                 {
-                    categoryJSON!.map(item => {
+                    categories!.map(item => {
                         return (
                             <button 
                                 key={item.id} 
@@ -44,9 +51,8 @@ const Gallery: FC = () => {
                 }
             </div>
             <div className="gallery">
-                { loading && <span style={{fontSize: '18px', opacity: .7,}}>Loading....</span>}
                 {
-                    !loading && gallery!.map(item => {
+                    pictures!.map(item => {
                         return (
                             <div 
                                 key={item.id} 
@@ -97,5 +103,14 @@ const Gallery: FC = () => {
         </div>
     )
 }
+const mapStateToProps = (state, ownProp) => ({
+    categories: state.categories,
+    pictures: state.pictures,
+})
 
-export default Gallery
+const mapDispatchToProps = {
+    getCategories,
+    getPictures
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Gallery)
