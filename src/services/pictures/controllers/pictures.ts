@@ -62,7 +62,6 @@ export const PictureController: IPictureController = {
                 })
                 fs.writeFileSync(filePathCategory, JSON.stringify(categories))
             }
-
             // Template new picture
             const newPicture: IPicture = {
                 id: pictures.length+1,
@@ -73,6 +72,8 @@ export const PictureController: IPictureController = {
                 size: req.body.size || "",
                 image: ''
             }
+            
+
             await cloudinary.v2.uploader.unsigned_upload(
                 req.body.image, 
                 REACT_APP_CLOUDINARY_UPLOAD_PRESET, 
@@ -90,8 +91,13 @@ export const PictureController: IPictureController = {
             fs.writeFileSync(filePathPicture, JSON.stringify(pictures))
 
             return res.status(201).json({
-                // data: [...pictures],
-                data: newPicture,
+                data: {
+                    picture: newPicture,
+                    category: {
+                        id: String(req.body.category.toLowerCase().replace(' ', '-')),
+                        name: req.body.category
+                    }
+                },
                 error: null
             })
         } catch (error) {
@@ -150,8 +156,13 @@ export const PictureController: IPictureController = {
             fs.writeFileSync(filePathPicture, JSON.stringify(newPictures))
 
             return res.status(200).json({
-                // data: [...newPictures],
-                data: newPicture,
+                data: {
+                    picture: newPicture,
+                    category: {
+                        id: String(req.body.category.toLowerCase().replace(' ', '-')),
+                        name: req.body.category
+                    }
+                },
                 error: null
             })
         } catch (error) {
