@@ -25,6 +25,7 @@ export interface IPath {
     edit: string
     remove: string
     categories: string
+    cv: string
     login: string
     logout: string
     auth: string

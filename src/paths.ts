@@ -6,6 +6,7 @@ export const paths: IPath = {
     auth: `${basePath}/auth`,
     pictures: `${basePath}/picture`,
     categories: `${basePath}/categories`,
+    cv: `${basePath}/cv`,
     
     add: `/add`,
     picture: `/:id`,

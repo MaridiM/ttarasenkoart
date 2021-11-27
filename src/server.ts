@@ -10,6 +10,7 @@ import { paths } from './paths'
 import { authRoutes } from './services/auth/routes'
 import { pictureRoutes } from './services/pictures/routes'
 import { categoriesRoutes } from './services/categories/routes'
+import { cvRoutes } from './services/cv/routes'
 
 const app = express()
 
@@ -26,6 +27,7 @@ app.use(express.json());
 app.use(paths.auth, authRoutes)
 app.use(paths.categories, categoriesRoutes)
 app.use(paths.pictures, pictureRoutes)
+app.use(paths.cv, cvRoutes)
 
 app.listen(PORT, () => {
     console.log(`Service listening on port ${PORT}`)
