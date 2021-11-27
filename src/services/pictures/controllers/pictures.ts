@@ -40,26 +40,6 @@ export const PictureController: IPictureController = {
         }
     },
 
-    picture: (req: Request, res: Response): Response<IPictureResponse, Record<string, any>>  => {
-        try {
-            
-            // Read file
-            const pictures = JSON.parse(fs.readFileSync(filePathPicture, 'utf-8'))
-            const picture = pictures.filter(pict => String(pict.id) === req.params.id)
-
-            if(!picture) return res.status(200).json({data: [], error: 'Picture is not found'}) 
-            return res.status(200).json({
-                data: [...picture],
-                error: null
-            })
-        } catch (error) {
-            return res.status(500).json({
-                data: [],
-                error: 'Internal Server Error'
-            })
-        }
-    },
-    
     add: async (req: Request, res: Response): Promise<Response<IPictureResponse, Record<string, any>>> => {
         try {
             
@@ -110,7 +90,8 @@ export const PictureController: IPictureController = {
             fs.writeFileSync(filePathPicture, JSON.stringify(pictures))
 
             return res.status(201).json({
-                data: [...pictures],
+                // data: [...pictures],
+                data: newPicture,
                 error: null
             })
         } catch (error) {
@@ -169,7 +150,8 @@ export const PictureController: IPictureController = {
             fs.writeFileSync(filePathPicture, JSON.stringify(newPictures))
 
             return res.status(200).json({
-                data: [...newPictures],
+                // data: [...newPictures],
+                data: newPicture,
                 error: null
             })
         } catch (error) {
