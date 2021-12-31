@@ -15,6 +15,7 @@ const Header = () => {
         }}>
             <div className="header">
                 <div className="name"><Link to={paths.home}>Tetiana Tarasenko</Link></div>
+                <div style={{ fontSize: '24px'}}>+380999296141</div>
                 <div className="logo">
                     <img src={LogoImg} alt="Tetiana Tarasenko " />
                 </div>
