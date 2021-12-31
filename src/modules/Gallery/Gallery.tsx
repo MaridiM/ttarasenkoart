@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import sass from './styles.module.sass'
-import { GalleryList, SortPicture } from 'components'
+import { AccessModal, GalleryList, SortPicture } from 'components'
 import { TCategory, TPicture, TStateRemovePicture } from 'types'
 
 type TProps = {
@@ -31,18 +31,13 @@ const Gallery: FC<TProps>  = ({
         <div className={sass.gallery}>
             {
                 removePictureState.picture && removePictureState.status && 
-                    <div className={sass.blur}>
-                        <div className={sass.modal}>
-                            <h3 className={sass.modal_title}>Remove picture</h3>
-                            <hr className={sass.modal_line} />
-                            <p className={sass.modal_text}>Do you really want to delete <strong>{removePictureState.picture!.name }</strong> picture?</p>
-                            <hr className={sass.modal_line} />
-                            <div className={sass.modal_btn_group}>
-                                <button className={sass.modal_success} onClick={removePicture}>Delete</button>
-                                <button className={sass.modal_cancel} onClick={() => setRemovePictureState({status: false})}>Cancel</button>
-                            </div>
-                        </div>
-                    </div>
+                    <AccessModal
+                        title='Remove picture'
+                        success={removePicture}
+                        cancel={() => setRemovePictureState({status: false})}
+                    >
+                        Do you really want to delete <strong>{removePictureState.picture!.name }</strong> picture?
+                    </AccessModal>
             }
 
             <GalleryList 

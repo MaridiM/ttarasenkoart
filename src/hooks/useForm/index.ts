@@ -53,7 +53,7 @@ export const useForm = <T> (initialForm: T) => {
 
             }
             
-            // Reading file for  showing in browser before upload, send to server
+            // Reading file for showing in browser before upload, send to server
             // let fReader = new FileReader();
             
             // fReader.readAsDataURL(e.target.files[0]);
@@ -75,7 +75,6 @@ export const useForm = <T> (initialForm: T) => {
     const onSubmit = async (e, action: any, id?: string | number): Promise<void> => {
         e.preventDefault()
         // await uploadFile(fData)
-        console.log('upload')
         if (!id ) return action(form)
         return action(id, form)
     }

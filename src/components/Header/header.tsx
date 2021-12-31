@@ -19,13 +19,13 @@ const Header: FC<RouteComponentProps<TProps>> = ({location}) => {
                             >Gallery
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link 
-                            to={paths.add} 
-                            className={location.pathname === paths.add ? sass.active : ''}
-                            >Add Picture
+                            to={paths.cv} 
+                            className={location.pathname === paths.cv ? sass.active : ''} 
+                            >Cv
                         </Link>
-                    </li>
+                    </li> */}
                     <li><button onClick={_logout}>Log Out</button></li>
                 </ul>
             </nav>

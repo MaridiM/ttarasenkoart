@@ -3,6 +3,9 @@ import { TPaths, TPathsAPI } from "types"
 export const paths: TPaths = {
     admin: '/',
     gallery: '/gallery',
+    cv: '/cv',
+    cvAdd: '/cv/add',
+    cvEdit: (id?: string | number): string => id ? `/cv/edit/${id}` : '/cv/edit/:id',
     add: '/gallery/p/add',
     picture: (id?: string | number): string => id ? `/p/${id}` : '/p/:id',
     edit: (id?: string | number): string => id ? `/gallery/p/${id}` : '/gallery/p/:id',
@@ -15,6 +18,12 @@ export const pathsAPI: TPathsAPI =  {
     logout: `${baseApiPath}/auth/logout`,
 
     categories: `${baseApiPath}/categories`,
+
+    cv: `${baseApiPath}/cv`,
+    cvAdd: `${baseApiPath}/cv/add`,
+    cvEdit: (id: string | number) => id ? `${baseApiPath}/cv/edit/${id}` : `${baseApiPath}/cv/edit/:id`,
+    cvRemove: (id: string | number) => id ? `${baseApiPath}/cv/remove/${id}` : `${baseApiPath}/cv/remove/:id`,
+
 
     pictures: `${baseApiPath}/picture`,
     add: `${baseApiPath}/picture/add`,

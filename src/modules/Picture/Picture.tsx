@@ -1,6 +1,6 @@
 import { paths } from "paths"
 import { FC } from "react"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import { TPicture, TStateRemovePicture } from "types"
 import sass from './styles.module.sass'
 
@@ -12,7 +12,7 @@ type TProps = {
 }
 
 const Picture: FC<TProps> = ({picture, getDataBeforeUpdate, setRemovePictureState }) => {
-
+    const history = useHistory()
     return (
         <div className={sass.picture}>
             <div className={sass.img}>
@@ -41,7 +41,7 @@ const Picture: FC<TProps> = ({picture, getDataBeforeUpdate, setRemovePictureStat
                 <footer>
                     <Link to={paths.edit(picture.id)} onClick={getDataBeforeUpdate}>Edit</Link>
                     <button onClick={() => setRemovePictureState({status: true, picture})}>Remove</button>
-                    <button onClick={() => window.location.pathname = paths.gallery}>Cancel</button>
+                    <button onClick={() => history.push(paths.gallery)}>Cancel</button>
                 </footer>
             </div>
         </div>

@@ -1,0 +1,76 @@
+.blur
+    position: absolute
+    width: 100%
+    height: 100%
+    background: rgba(255, 255, 255, .5)
+    z-index: 3
+    display: flex
+    justify-content: center
+.modal
+    display: flex
+    flex-direction: column
+    margin-top: 50px
+    width: 320px
+    height: fit-content
+    max-height: 150px
+    background: #fff
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, .3)
+    border-radius: 5px
+    text-align: center
+    &_line
+        height: 1px
+        background: rgba(0, 0, 0, .12)
+        border: none
+        width: 100%
+        margin: 0
+    
+    &_title
+        line-height: 32px
+        font-size: 18px
+        height: 32px
+        text-shadow: 0 0 2px rgba(0, 0, 0, .25)
+        color: #222
+        padding: 0 10px
+    &_text
+        min-height: 60px
+        line-height: 24px
+        font-size: 16px
+        color: #222
+        padding: 5px 10px
+    &_btn_group
+        width: 100%
+        display: flex
+        justify-content: space-between
+        padding: 5px 10px
+    &_success
+        height: 32px
+        background: #007FFF
+        border: none
+        outline: none
+        padding: 0px 18px 0px 18px
+        color: #fff
+        font-size: 14px
+        text-shadow: 0 0 2px rgba(0, 0, 0, 0.5)
+        box-shadow: 0 0 2px 1px rgba(#007FFF, 0.2)
+        transition: .3s all
+        border-radius: 8px
+        &:hover
+            background: #FF0000
+            transform: .3s
+    &_cancel
+        height: 32px
+        background: none
+        border: none
+        outline: none
+        padding: 0px 18px 0px 18px
+        color: #222
+        font-size: 14px
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.5)
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, .08)
+        transition: .3s all
+        border-radius: 8px
+        &:hover
+            background: rgba(0, 0, 0, .075)
+            transform: .3s
+    strong
+        font-weight: bold

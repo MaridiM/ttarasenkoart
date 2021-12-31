@@ -27,11 +27,9 @@ export const useAuthAPI = (): TUseAuthAPI => {
 
 
     const _login = async (data: TAuthForm): Promise<void> => {
-        console.log(data)
         await authAPI.login(data)
             .then(({data: { token, error }}) => {
                 if(!token) return toast.error(error || 'Token is not valid')
-                console.log(token)
 
                 localStorage.setItem('jwt_token', token)
                 return document.location.pathname = paths.gallery

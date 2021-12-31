@@ -1,4 +1,4 @@
-import { Auth, Gallery } from 'pages'
+import { Auth, Cv, Gallery } from 'pages'
 import { paths } from 'paths'
 import { FC } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
@@ -18,6 +18,11 @@ const LoginAmin: FC = () => {
                 paths.edit(),
                 paths.picture()           
             ]} component={Gallery} />
+            <Route exact path={[
+                paths.cv,
+                paths.cvAdd,
+                paths.cvEdit(),
+            ]} component={Cv} />
             <Redirect from='*' to={paths.admin} />
         </Switch>
     )

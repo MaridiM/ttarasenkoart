@@ -1,7 +1,3 @@
-// import { 
-//     useCategoryAPI, 
-//     // usePicturesAPI
-// } from 'api'
 import { Header } from 'components'
 import { useSort } from 'hooks'
 import { 
@@ -24,6 +20,7 @@ import {
     removePicture
 } from 'store/actions'
 import { TCategory, TPicture, TPictureForm, TStateRemovePicture } from 'types'
+import sass from './styles.module.sass'
 
 interface IProps extends RouteComponentProps<any> {
     getCategories: () => void
@@ -40,6 +37,7 @@ interface IProps extends RouteComponentProps<any> {
 
 const Gallery: FC<IProps>  = ({ 
     location,
+    history,
     getCategories,
     getPictures,
     getPicture,
@@ -51,17 +49,15 @@ const Gallery: FC<IProps>  = ({
     availability,
     categories
 }) => {
-
     const [removePictureState, setRemovePictureState] = useState<TStateRemovePicture>({
         picture: undefined,
         status: true
     })
-
     useEffect(() => {
         getCategories()
         getPictures()
     }, [getCategories, getPicture, getPictures, removePictureState])
-       
+    
     const { sort, setSort, pictures } = useSort(picturesDATA)
 
     const currentPictureID: string  = location.pathname.split('/')[location.pathname.split('/').length-1]
@@ -71,8 +67,21 @@ const Gallery: FC<IProps>  = ({
         setRemovePictureState({status: false})
     }
 
+    const addPicRetuning = (dataForm: TPictureForm) => {
+        addPicture(dataForm)
+        setTimeout(() => {
+            history.push(paths.gallery)
+        }, 1000)
+    }
+    const editPicRetuning = (id: string | number, dataForm: TPictureForm) => {
+        editPicture(id, dataForm)
+        setTimeout(() => {
+            history.push(paths.gallery)
+        }, 1000)
+    }
+
     return (
-        <div>
+        <div className={sass.gallery}>
             {
                ( location.pathname === paths.picture(currentPictureID) ||
                 location.pathname === paths.add || 
@@ -82,8 +91,8 @@ const Gallery: FC<IProps>  = ({
                         availability={availability}
                         categories={categories}
                         removePicture={removePicture}
-                        addPicture={addPicture}
-                        editPicture={editPicture}
+                        addPicture={addPicRetuning}
+                        editPicture={editPicRetuning}
                         path={location.pathname}
                         picture={picture}
                         setRemovePictureState={setRemovePictureState}
@@ -93,6 +102,7 @@ const Gallery: FC<IProps>  = ({
 
             
             <Header />
+            
             <GalleryModule 
                 availability={availability}
                 categories={categories}

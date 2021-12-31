@@ -1,14 +1,19 @@
-import { TCategories } from './../../types.d';
+import { TReducerState } from './../../types.d';
 import { 
+    ADD_CV,
     ADD_PICTURE,
+    EDIT_CV,
     EDIT_PICTURE,
+    GET_ALL_CV,
     GET_CATEGORIES, 
+    GET_CV, 
     GET_PICTURE, 
     GET_PICTURES,
+    REMOVE_CV,
     REMOVE_PICTURE,
 } from 'store/typeActions'
 
-const initialState: TCategories = {
+const initialState: TReducerState = {
     categories: [],
     availability: [
         {
@@ -30,10 +35,18 @@ const initialState: TCategories = {
         size: '',
         image: ''
     },
+    cvList: [],
+    cv: {
+        id: '',
+        dateFrom: null,
+        dateTo: null,
+        now: false,
+        text: ''
+    }
 
 }
 
-const reducer = (state = initialState, { type, payload, category } ) => {
+const reducer = (state = initialState, { type, payload } ) => {
     switch (type) {
         // CATEGORY
         case GET_CATEGORIES:
@@ -50,24 +63,64 @@ const reducer = (state = initialState, { type, payload, category } ) => {
             }
 
         case GET_PICTURE:
-            return {
-                ...state,
-                picture: { ...payload[0] }
-            }
+            const picture = state.pictures.filter( c => c.id === payload)[0]
+            return { ...state, picture }
+
         case ADD_PICTURE:
             return {
                 ...state,
-                pictures: [...state.pictures, ...payload]
+                pictures: [ payload.picture, ...state.pictures],
+                categories: payload.categories 
+                    ? [state.categories[0], ...payload.categories] 
+                    : [...state.categories]
             }
         case EDIT_PICTURE:
+            let updatedPic = state.pictures.map(p => {
+                if (p.id === payload.picture.id) {
+                    p = payload.picture
+                }
+                return p
+            })
             return {
                 ...state,
-                pictures: [...state.pictures, ...payload]
+                pictures: [  ...updatedPic ],
+                categories: payload.categories 
+                    ? [state.categories[0], ...payload.categories] 
+                    : [...state.categories]
             }
         case REMOVE_PICTURE:
+            const removedPic = state.pictures.filter( p => p.id !== payload)
             return {
                 ...state,
-                pictures: [...state.pictures, ...payload]
+                pictures: [ ...removedPic ]
+            }
+
+        // CV
+        case GET_ALL_CV:
+            return {
+                ...state,
+                cvList:  [ ...payload ]
+            }
+
+        case GET_CV:
+            const cv = state.cvList.filter( c => c.id === payload)[0]
+            return { ...state, cv }
+        case ADD_CV:
+            return {
+                ...state,
+                cvList: [...payload]
+            }
+        case EDIT_CV:
+            console.log(payload)
+            return {
+                ...state,
+                cvList: [...state.cvList, ...payload]
+            }
+        case REMOVE_CV:
+            const removedCv = state.cvList.filter( c => c.id !== payload)
+            return {
+                ...state,
+                cvList: [ ...removedCv ]
             }
 
         default:

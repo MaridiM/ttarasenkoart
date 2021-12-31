@@ -42,7 +42,7 @@ const ModalPages: FC<TProps>  = ({
     const getDataBeforeUpdate = (): void => {
         const c = categories.filter(p => p.id === picture.category)[0]
         const a = availability.filter(p => p.id === picture.availability.toLowerCase())[0]
-        
+
         setForm(state => ({
             ...state,
             name: picture.name,
