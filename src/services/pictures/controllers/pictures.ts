@@ -246,7 +246,7 @@ export const PictureController: IPictureController = {
             const existRemovedPictureCategory = await Picture.find({category: removedPictByID.category}).exec()
             
             if (existRemovedPictureCategory.length === 0 && existCategory.length !== 0) {
-                const a = await Category.findOneAndRemove({id: removedPictByID.category})
+                await Category.findOneAndRemove({id: removedPictByID.category})
             }
             const allPict = await Picture.find({})
             const allCategories = await Category.find({})
