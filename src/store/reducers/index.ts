@@ -81,7 +81,6 @@ const reducer = (state = initialState, { type, payload } ) => {
                 }
                 return p
             })
-            console.log(payload)
             return {
                 ...state,
                 pictures: [  ...updatedPict ],
@@ -90,10 +89,10 @@ const reducer = (state = initialState, { type, payload } ) => {
                     : [...state.categories]
             }
         case REMOVE_PICTURE:
-            const removedPic = state.pictures.filter( p => p.id !== payload)
             return {
                 ...state,
-                pictures: [ ...removedPic ]
+                pictures: [ ...payload.pictures ],
+                categories: [ state.categories[0], ...payload.categories ]
             }
 
         // CV

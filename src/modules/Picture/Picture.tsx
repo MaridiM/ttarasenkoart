@@ -21,7 +21,7 @@ const Picture: FC<TProps> = ({picture, getDataBeforeUpdate, setRemovePictureStat
             <div className={sass.body}>
                 <header>
                     <h4>{picture.name}</h4>
-                    <span className={sass.param}>ID: {picture.id}</span>
+                    {/* <span className={sass.param}>ID: {picture.id}</span> */}
                 </header>
                 <ul>
                     <li>
@@ -39,7 +39,10 @@ const Picture: FC<TProps> = ({picture, getDataBeforeUpdate, setRemovePictureStat
                     <li><div className={sass.param}>Size:</div>{picture.size}</li>
                 </ul>
                 <footer>
-                    <Link to={paths.edit(picture.id)} onClick={getDataBeforeUpdate}>Edit</Link>
+                    <Link to={paths.edit(picture.id)} onClick={() => {
+                        getDataBeforeUpdate()
+                        history.push(paths.gallery)
+                    }}>Edit</Link>
                     <button onClick={() => setRemovePictureState({status: true, picture})}>Remove</button>
                     <button onClick={() => history.push(paths.gallery)}>Cancel</button>
                 </footer>

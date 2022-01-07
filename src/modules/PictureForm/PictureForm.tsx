@@ -44,7 +44,7 @@ const PictureForm: FC<TProps>  = ({
             <div className={sass.body}>
                <header>
                     <h4>{ path === paths.add ? 'Add picture' : 'Update picture' }</h4>
-                    { path !== paths.add && <span>ID: {pictureID}</span>}
+                    {/* { path !== paths.add && <span>ID: {pictureID}</span>} */}
                 </header>
                  <div className={sass.inputGroup}>
                     <TextField

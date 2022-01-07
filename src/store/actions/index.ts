@@ -84,11 +84,11 @@ export const editPicture = (id: string | number, dataForm: TPictureForm)=> async
 }
 
 export const removePicture = (id: string | number)=> async dispatch => {
-    const {data: { error }} = await pictureAPI.remove(id)
+    const {data: {data,  error }} = await pictureAPI.remove(id)
     if (error) return toast.error(error)
     dispatch({
         type: REMOVE_PICTURE,
-        payload: id 
+        payload: { ...data, id } 
     })
     return
 
