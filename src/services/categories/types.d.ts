@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 
 export interface ICategoryController {
-    main: (request: Request, response: Response, next?: NextFunction) => Response<ICategoryResponse, Record<string, any>>
+    main: (request: Request, response: Response, next?: NextFunction) => Promise<Response<ICategoryResponse, Record<string, any>>>
 }
 
 export interface ICategory {

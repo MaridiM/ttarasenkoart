@@ -1,3 +1,5 @@
+import './db'
+
 import express from 'express'
 import cors from 'cors'
 import bodyParser from 'body-parser'
@@ -11,6 +13,11 @@ import { authRoutes } from './services/auth/routes'
 import { pictureRoutes } from './services/pictures/routes'
 import { categoriesRoutes } from './services/categories/routes'
 import { cvRoutes } from './services/cv/routes'
+
+// MongoDB models
+import './services/pictures/models'
+import './services/categories/models'
+
 
 const app = express()
 

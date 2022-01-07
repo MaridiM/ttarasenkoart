@@ -26,10 +26,17 @@ export const CvController: ICvController = {
             if(JSON.stringify(req.body) !== '{}' || req.body.text){
                 const { dateFrom, dateTo, now, text } = req.body
 
+                if (isNaN((Number(dateFrom)))) return res.status(200).json({ data: [], error: 'Date From must be number' }) 
+                if (isNaN(Number(dateTo))) return res.status(200).json({ data: [], error: 'Date To must be number' }) 
+                if (dateFrom.length !== 4 && dateFrom !== '') return res.status(200).json({ data: [], error: 'Date From must 4 numbers' })
+                if (dateTo.length !== 4 && !now && dateTo !== '') return res.status(200).json({ data: [], error: 'Data To must 4 numbers' }) 
+                if (Number(dateTo) < Number(dateFrom) ) return res.status(200).json({ data: [], error: 'Date To must be more like date from'}) 
+                if (Number(dateTo) < 1950 ||  Number(dateFrom) < 1950 ) return res.status(200).json({ data: [], error: 'Date can not be less 1950 years'}) 
+
                 const newCv = {
-                    id: String(Math.floor(Math.random()*1000000*16)),
+                    id: String(Math.floor(Math.random()*1000000*16)+Math.floor(Math.random()*1000000*16)),
                     dateFrom: dateFrom || null,
-                    dateTo: dateTo || null,
+                    dateTo: !now ? dateTo : null,
                     now: now || false,
                     text
                 }
@@ -52,7 +59,7 @@ export const CvController: ICvController = {
                     error: null
                 })
             }
-            return res.status(204).json({
+            return res.status(200).json({
                 data: [],
                 error: 'Write text field, text can\'t be empty'
             })

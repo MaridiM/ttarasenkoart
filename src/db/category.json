@@ -1,1 +1,22 @@
-[{"id":"still-life","name":"Still Life"},{"id":"nude","name":"Nude"},{"id":"portrait","name":"Portrait"},{"id":"drawing","name":"Drawing"},{"id":"figurative","name":"Figurative"}]
+[
+    {
+        "id": "still-life",
+        "name": "Still Life"
+    },
+    {
+        "id": "nude",
+        "name": "Nude"
+    },
+    {
+        "id": "portrait",
+        "name": "Portrait"
+    },
+    {
+        "id": "drawing",
+        "name": "Drawing"
+    },
+    {
+        "id": "figurative",
+        "name": "Figurative"
+    }
+]

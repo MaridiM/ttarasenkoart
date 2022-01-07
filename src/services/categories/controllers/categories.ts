@@ -1,15 +1,18 @@
 import { Request, Response } from 'express'
 import { ICategoryController, ICategoryResponse } from '../types'
 import '../../../db/category.json'
-import path from 'path'
-import fs from 'fs'
+// import path from 'path'
+// import fs from 'fs'
+import { Category } from '../models'
 
-const filePathCategory = path.join(__dirname, './../../../db/category.json')
+// const filePathCategory = path.join(__dirname, './../../../db/category.json')
+
 export const CategoryController: ICategoryController = {
-    main: (req: Request, res: Response): Response<ICategoryResponse, Record<string, any>> => {
+    main: async (req: Request, res: Response): Promise<Response<ICategoryResponse, Record<string, any>>> => {
         try {
             // Write in file
-            const categories = JSON.parse(fs.readFileSync(filePathCategory, 'utf-8'))
+            // const categories = JSON.parse(fs.readFileSync(filePathCategory, 'utf-8'))
+            const categories = await Category.find({})
 
             if(!categories) return res.status(200).json({ data: [], error: 'Have no any category' })
             
