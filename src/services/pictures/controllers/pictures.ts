@@ -249,7 +249,7 @@ export const PictureController: IPictureController = {
             )
 
             // Write in file
-            
+            await Picture.findByIdAndRemove({_id: req.params.id})
             const allPict = await Picture.find({})
             const allCategories = await Category.find({})
 
