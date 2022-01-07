@@ -230,17 +230,7 @@ export const PictureController: IPictureController = {
     remove: async (req: Request, res: Response): Promise<Response<IPictureResponse, Record<string, any>>> => {
         try {
             const removedPictByID = await Picture.findById({_id: req.params.id})
-              
-              
-            // Remove categories if they dont have picture
-            const existCategory = await Category.find({id: removedPictByID.category}).exec()
-            const existRemovedPictureCategory = await Picture.find({category: removedPictByID.category}).exec()
-
-            if (existRemovedPictureCategory.length === 0 && existCategory.length !== 0) {
-                await Category.findOneAndRemove({id: removedPictByID.category})
-                console.log('remove ', removedPictByID.category)
-            }
-
+                        
             const imageName = removedPictByID.image.split('/')
 
             await cloudinary.v2.uploader.destroy(
@@ -250,12 +240,20 @@ export const PictureController: IPictureController = {
 
             // Write in file
             await Picture.findByIdAndRemove({_id: req.params.id})
+
+             // Remove categories if they dont have picture
+            const existCategory = await Category.find({id: removedPictByID.category}).exec()
+            const existRemovedPictureCategory = await Picture.find({category: removedPictByID.category}).exec()
+            
+            if (existRemovedPictureCategory.length === 0 && existCategory.length !== 0) {
+                const a = await Category.findOneAndRemove({id: removedPictByID.category})
+            }
             const allPict = await Picture.find({})
             const allCategories = await Category.find({})
 
             return res.status(200).json({
                 data: {
-                    picture: allPict,
+                    pictures: allPict,
                     categories: allCategories
                 },
                 error: null
