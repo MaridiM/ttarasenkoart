@@ -53,6 +53,7 @@ const Gallery: FC<IProps>  = ({
         picture: undefined,
         status: true
     })
+    
     useEffect(() => {
         getCategories()
         getPictures()

@@ -75,15 +75,16 @@ const reducer = (state = initialState, { type, payload } ) => {
                     : [...state.categories]
             }
         case EDIT_PICTURE:
-            let updatedPic = state.pictures.map(p => {
+            let updatedPict = state.pictures.map(p => {
                 if (p.id === payload.picture.id) {
                     p = payload.picture
                 }
                 return p
             })
+            console.log(payload)
             return {
                 ...state,
-                pictures: [  ...updatedPic ],
+                pictures: [  ...updatedPict ],
                 categories: payload.categories 
                     ? [state.categories[0], ...payload.categories] 
                     : [...state.categories]

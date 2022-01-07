@@ -42,7 +42,6 @@ const ModalPages: FC<TProps>  = ({
     const getDataBeforeUpdate = (): void => {
         const c = categories.filter(p => p.id === picture.category)[0]
         const a = availability.filter(p => p.id === picture.availability.toLowerCase())[0]
-
         setForm(state => ({
             ...state,
             name: picture.name,
@@ -53,16 +52,16 @@ const ModalPages: FC<TProps>  = ({
             image: picture.image,
         }))
     }
-
     return (
         <div className={sass.modal_blur}>
             <div className={sass.modal_window}>
                 {
                     path === paths.picture(String(picture.id)) && <Picture
-                        picture={picture}
                         removePicture={removePicture}
                         getDataBeforeUpdate={getDataBeforeUpdate}
                         setRemovePictureState={setRemovePictureState}
+                        picture={picture}
+
                     />
                 }
                 {
