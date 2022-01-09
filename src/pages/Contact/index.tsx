@@ -25,7 +25,6 @@ const Contact: FC = () => {
     
     const sendEmail = (e) => {
         e.preventDefault();
-        console.log(form)
         emailjs.send(
             MAIL_JS_SERVICE_ID, 
             MAIL_JS_TEMPLATE_ID, 

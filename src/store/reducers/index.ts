@@ -24,7 +24,7 @@ const reducer = (state = initialState, { type, payload, category } ) => {
         case GET_CATEGORIES:
             return {
                 ...state,
-                categories: [...state.categories, ...payload]
+                categories: [...payload]
             }
 
         case GET_PICTURES:
