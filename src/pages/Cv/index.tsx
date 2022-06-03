@@ -35,6 +35,13 @@ const Cv: FC = () => {
                 <p> <span>2017</span> - took part in the cultural and artistic project “Under the Pinzel’s star”</p>
                 <p> <span>2018</span> - taking part in the collective exhibition in the Art Gallery of Madam Palmgren, Lviv;</p>
                 <p> <span>2018</span> - participating the “Art Cube Project” at the international Alfa Jazz Fest, Lviv.</p>
+                <p> <span>2018</span> - personal exhibition at "Art gallery of madam Palmgren", Lviv</p>
+                <p> <span>2019</span> - diploma of the exibition at Salon Art Shopping in "Carrousel du Louvre" (Paris, France)</p>
+                <p> <span>2020</span> - exhibition at the Sonia MOnti Gallery.(Paris, France)</p>
+                <p> <span>2020</span> - participating the Artbox. Project(Barcelona)</p>
+                <p> <span>2020</span> - partaking at the Artbox. Project(Barcelona)</p>
+                <p> <span>2021</span> - participating the Artbox. Project World 1.0</p>
+                <p> <span>2021</span> - participating at the joint exhibitions of plainting("Authmn Saloon") Lviv</p>
                 <p> <span>Now</span> - she lives and works in Lviv</p>
                 <br />
                 <p> <span>Nowadays, you can find her pictures in some private collections in USA, Russia, Poland, Canada and Italy.</span></p>
