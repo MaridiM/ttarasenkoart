@@ -109,7 +109,7 @@ export const PictureController: IPictureController = {
                 
                 
             const addedPicture = await Picture.create(newPicture)
-            newPicture.id = addedPicture._id
+            newPicture.id = String(addedPicture._id)
             const updatedCategories = await Category.find({})
 
             return res.status(201).json({
@@ -140,6 +140,13 @@ export const PictureController: IPictureController = {
                 }))
             }
             const picture =  await Picture.findById({_id: req.params.id})
+
+            if (!picture) {
+                return res.status(404).json({
+                    picture: {},
+                    error: 'Picture is not found'
+                })
+            }
             
             // Validation required inputs
             if ( req.body.name === '' ) return res.status(200).json({data: [...pictList], error: 'Title can not be empty'})
@@ -169,7 +176,13 @@ export const PictureController: IPictureController = {
             // Write in file
             await Picture.findByIdAndUpdate({_id: picture.id}, newPicture)
             const updatedPicture = await Picture.findById({_id: picture.id})
-            newPicture.id = updatedPicture._id
+            if (!updatedPicture) {
+                return res.status(204).json({
+                    picture: {},
+                    error: 'Error updating picture'
+                })
+            }
+            newPicture.id = String(updatedPicture._id)
             const updatedPictures = await Picture.find({})
             
             
@@ -230,6 +243,12 @@ export const PictureController: IPictureController = {
     remove: async (req: Request, res: Response): Promise<Response<IPictureResponse, Record<string, any>>> => {
         try {
             const removedPictByID = await Picture.findById({_id: req.params.id})
+            if (!removedPictByID) {
+                return res.status(404).json({
+                    picture: {},
+                    error: 'Picture is not found'
+                })
+            }
                         
             const imageName = removedPictByID.image.split('/')
 
