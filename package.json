@@ -7,7 +7,7 @@
     "dev": "cd src && nodemon --exec ts-node server.ts -e ts",
     "start": "cd bin && node server.js",
     "prebuild": "rm -rf bin",
-    "build": "tsc"
+    "build": "npm install && tsc"
   },
   "repository": {
     "type": "git",
