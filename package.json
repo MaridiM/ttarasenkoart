@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "cd src && nodemon --exec ts-node server.ts -e ts",
     "start": "cd bin && node server.js",
-    "prebuild": "rm -rf bin",
+    "prebuild": "rm -rf bin  && npm cache clean --force",
     "build": "npm install && tsc"
   },
   "repository": {
