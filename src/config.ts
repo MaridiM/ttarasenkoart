@@ -1,7 +1,7 @@
 import session from 'express-session';
 import { ISessionOptions, ICorsOptions } from './types';
 
-export const MONGODB_URI: string = process.env.MONGODB_URI || 'mongodb+srv://ttarasenkoart:ttarasenkoart@cluster0.ui2vp.mongodb.net/ttarasenkoart?retryWrites=true&w=majority'
+export const MONGODB_URI: string = process.env.MONGODB_URI || 'mongodb://atlas-sql-61d4c3c06c85374cfecee832-ui2vp.a.query.mongodb.net/ttarasenkoart?ssl=true&authSource=admin'
 
 export const PORT: string | number = process.env.PORT || 8000
 export const SESSION_SECRET: string = process.env.SESSION_SECRET || 'SOMEsecREtCoDeFoRSEsSiON'
