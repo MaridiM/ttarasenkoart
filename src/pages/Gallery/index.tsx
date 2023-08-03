@@ -1,3 +1,4 @@
+import { Loader } from 'components'
 import { FC, useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getCategories, getPictures } from 'store/actions'
@@ -19,6 +20,7 @@ const Gallery: FC<TProps> = ({
     categories,
     pictures
 }) => {
+    const [loading, setLoading] = useState<boolean>(true) 
     const [category, setCategory] = useState<string>('all')
     const [hoverId, setHoverId] = useState<number | string | null>(null )
     const [showPicture, setPicture] = useState<TPictureState>({
@@ -30,7 +32,9 @@ const Gallery: FC<TProps> = ({
     useEffect(() => {
         getCategories()
         getPictures(category)
-    }, [category, getCategories, getPictures])
+        
+        pictures.length && setLoading(false)
+    }, [category, getCategories, getPictures, pictures])
 
     
     const showBigPicture = (picture: string, blur: boolean): void => setPicture({ blur, picture }) 
@@ -50,47 +54,51 @@ const Gallery: FC<TProps> = ({
                     })
                 }
             </div>
-            <div className="gallery">
                 {
-                    pictures!.map(item => {
-                        return (
-                            <div 
-                                key={item.id} 
-                                className="item"
-                                onClick={() => showBigPicture(item.image, true)}
-                                onMouseEnter={() => setHoverId(item.id)}
-                                onMouseLeave={() => setHoverId(null)}
-                            >
-                                {
-                                    hoverId === item.id && (
-                                        <div className="info">
-                                            <h2>{item.name}</h2>
-                                            <div>
-                                                <p>Availability :</p>
-                                                <span>{item.availability}</span>
-                                            </div>
-                                            <div>
-                                                <p>Type :</p>
-                                                <span>{item.type}</span>
-                                            </div>
-                                            <div>
-                                                <p>Size :</p>
-                                                <span>{item.size}</span>
-                                            </div>
+                    loading 
+                        ? <Loader />
+                        : <div className="gallery">
+                            {
+                                pictures!.map(item => {
+                                    return (
+                                        <div 
+                                            key={item.id} 
+                                            className="item"
+                                            onClick={() => showBigPicture(item.image, true)}
+                                            onMouseEnter={() => setHoverId(item.id)}
+                                            onMouseLeave={() => setHoverId(null)}
+                                        >
+                                            {
+                                                hoverId === item.id && (
+                                                    <div className="info">
+                                                        <h2>{item.name}</h2>
+                                                        <div>
+                                                            <p>Availability :</p>
+                                                            <span>{item.availability}</span>
+                                                        </div>
+                                                        <div>
+                                                            <p>Type :</p>
+                                                            <span>{item.type}</span>
+                                                        </div>
+                                                        <div>
+                                                            <p>Size :</p>
+                                                            <span>{item.size}</span>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            }
+                                            <img 
+                                                src={item.image}
+                                                alt={item.category}
+                                                style={{opacity:  hoverId !== item.id ? 1 : 0.1}} 
+                                            />
                                         </div>
                                     )
-                                }
-                                <img 
-                                    src={item.image}
-                                    alt={item.category}
-                                    style={{opacity:  hoverId !== item.id ? 1 : 0.1}} 
-                                />
-                            </div>
-                        )
 
-                    })
-                }
-            </div>
+                                })
+                            }
+                        </div>
+                }   
             { showPicture.blur && <div 
                 className="bigImg"
                 onClick={() => showBigPicture('', false)}
