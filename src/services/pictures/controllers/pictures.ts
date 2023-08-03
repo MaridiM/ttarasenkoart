@@ -26,6 +26,7 @@ export const PictureController: IPictureController = {
         try {
             // Get Data from db
             const pictures = await Picture.find({})
+
             if(pictures.length) {
                 return res.status(200).json({
                     data: pictures.map(({_id, name, category, availability, type, size, image}) => ({

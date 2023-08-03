@@ -36,6 +36,7 @@ app.use(paths.categories, categoriesRoutes)
 app.use(paths.pictures, pictureRoutes)
 app.use(paths.cv, cvRoutes)
 
+
 app.listen(PORT, () => {
     console.log(`Service listening on port ${PORT}`)
 })
