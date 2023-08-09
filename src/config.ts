@@ -7,5 +7,5 @@ export const REACT_APP_CLOUDINARY_UPLOAD_PRESET: string = process.env.REACT_APP_
 export const REACT_APP_CLOUDINARY_API_URL: string = process.env.REACT_APP_CLOUDINARY_API_URL || 'https://api.cloudinary.com/v1_1/dy4mln81z/image/upload'
 
 // export const SERVER_API: string = 'https://server-ttarasenkoart.herokuapp.com/'
-export const SERVER_API: string = 'http://localhost:8000/'
-// export const SERVER_API: string = 'https://ttarasenkoart-server.onrender.com/'
+// export const SERVER_API: string = 'http://localhost:8000/'
+export const SERVER_API: string = 'https://ttarasenkoart-server.onrender.com/'
