@@ -1,10 +1,10 @@
 import { ChangeEvent, FC } from 'react'
-import { TextField} from '@material-ui/core' 
+import { TextField } from '@mui/material' 
 import { PhotoInput } from 'components'
-import sass from './styles.module.sass'
 import { SelectInput } from 'components/SelectInput'
 import { Link } from 'react-router-dom'
 import { paths } from 'paths'
+import sass from './styles.module.sass'
 import { TCategory, TPictureForm } from 'types'
 
 type TProps = {

@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel, TextField } from '@material-ui/core'
+import { Checkbox, FormControlLabel, TextField } from '@mui/material'
 import { ActionHeader, Header, CvListItem, AccessModal } from 'components'
 import { useForm } from 'hooks'
 import { paths } from 'paths'
