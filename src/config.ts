@@ -1,6 +1,7 @@
 import session from 'express-session';
 import { ISessionOptions, ICorsOptions } from './types';
 
+// export const MONGODB_URI: string = process.env.MONGODB_URI || 'mongodb+srv://ttarasenkoart:ttarasenkoart@cluster0.ui2vp.mongodb.net/tt?retryWrites=true&w=majority'
 export const MONGODB_URI: string = process.env.MONGODB_URI || 'mongodb+srv://ttarasenkoart:ttarasenkoart@cluster0.ui2vp.mongodb.net/ttarasenkoart?retryWrites=true&w=majority'
 
 export const PORT: string | number = process.env.PORT || 8000
@@ -8,12 +9,14 @@ export const SESSION_SECRET: string = process.env.SESSION_SECRET || 'SOMEsecREtC
 export const CLIENT_HOST: string = process.env.CLIENT_HOST || '*'
 
 // Cloudinary
-export const REACT_APP_CLOUDINARY_API_KAY: string = process.env.REACT_APP_CLOUDINARY_API_KAY || '821279233882751'
-export const REACT_APP_CLOUDINARY_API_SECRET: string = process.env.REACT_APP_CLOUDINARY_API_SECRET || 'RXcPZVDEzyS9ynNC-VAmlDK78IQ'
+export const REACT_APP_CLOUDINARY_API_KAY: string = process.env.REACT_APP_CLOUDINARY_API_KAY || '768673679571263'
+// export const REACT_APP_CLOUDINARY_API_KAY: string = process.env.REACT_APP_CLOUDINARY_API_KAY || '821279233882751'
+export const REACT_APP_CLOUDINARY_API_SECRET: string = process.env.REACT_APP_CLOUDINARY_API_SECRET || 'qysybldlJWs_RHWH3CUM8NoStSA'
+// export const REACT_APP_CLOUDINARY_API_SECRET: string = process.env.REACT_APP_CLOUDINARY_API_SECRET || 'RXcPZVDEzyS9ynNC-VAmlDK78IQ'
 export const REACT_APP_CLOUDINARY_UPLOAD_PRESET: string = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET || 'pxrbylo3_ttarasenkoart.com'
-export const REACT_APP_CLOUDINARY_API_URL: string = process.env.REACT_APP_CLOUDINARY_API_URL || 'https://api.cloudinary.com/v1_1/dki4lxdki/image/upload'
-export const REACT_APP_CLOUDINARY_CLOUD_NAME: string = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME || 'dki4lxdki'
-
+export const REACT_APP_CLOUDINARY_API_URL: string = process.env.REACT_APP_CLOUDINARY_API_URL || 'https://api.cloudinary.com/v1_1/dy4mln81z/image/upload'
+export const REACT_APP_CLOUDINARY_CLOUD_NAME: string = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME || 'dy4mln81z'
+// export const REACT_APP_CLOUDINARY_CLOUD_NAME: string = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME || 'dki4lxdki'
 
 var MemoryStore =session.MemoryStore
 

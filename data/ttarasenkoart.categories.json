@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "61d619e88052734040b22d9a"
+  },
+  "id": "still-life",
+  "name": "Still Life"
+},
+{
+  "_id": {
+    "$oid": "61d619e88052734040b22d9b"
+  },
+  "id": "nude",
+  "name": "Nude"
+},
+{
+  "_id": {
+    "$oid": "61d619e88052734040b22d9c"
+  },
+  "id": "portrait",
+  "name": "Portrait"
+},
+{
+  "_id": {
+    "$oid": "61d619e88052734040b22d9d"
+  },
+  "id": "drawing",
+  "name": "Drawing"
+},
+{
+  "_id": {
+    "$oid": "61d619e88052734040b22d9e"
+  },
+  "id": "figurative",
+  "name": "Figurative"
+}]

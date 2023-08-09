@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "61fa7e927d8ff6329cd5875f"
+  },
+  "dateFrom": 1980,
+  "dateTo": 1985,
+  "now": false,
+  "text": "studied at the Lviv Academy of Arts",
+  "__v": 0
+}]
