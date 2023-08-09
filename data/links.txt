@@ -1,0 +1,9 @@
+// Mobile
+https://res.cloudinary.com/dy4mln81z/image/upload/v1691614107/ttarasenkoart/slider/mobile/0_zjms5k.webp
+https://res.cloudinary.com/dy4mln81z/image/upload/v1691614107/ttarasenkoart/slider/mobile/1_pjxg3b.webp
+https://res.cloudinary.com/dy4mln81z/image/upload/v1691614107/ttarasenkoart/slider/mobile/2_aahrq4.webp
+
+// Desktop
+https://res.cloudinary.com/dy4mln81z/image/upload/v1691614027/ttarasenkoart/slider/desktop/0_ivh2bp.webp
+https://res.cloudinary.com/dy4mln81z/image/upload/v1691614027/ttarasenkoart/slider/desktop/1_mo6juf.webp
+https://res.cloudinary.com/dy4mln81z/image/upload/v1691614028/ttarasenkoart/slider/desktop/2_aspcti.webp
