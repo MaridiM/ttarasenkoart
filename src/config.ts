@@ -7,4 +7,5 @@ export const MAIL_JS_SERVICE_ID: string = 'service_ylfvgjr'
 export const MAIL_JS_TEMPLATE_ID: string = 'template_eg533vm'
 // export const MAIL_JS_TEMPLATE_ID: string = 'template_355lvzs'
 
-export const SERVER_API: string = 'https://ttarasenkoart-server.onrender.com'
+// export const SERVER_API: string = 'https://ttarasenkoart-server.onrender.com'
+export const SERVER_API: string = 'https://api.ttarasenkoart.com/'
