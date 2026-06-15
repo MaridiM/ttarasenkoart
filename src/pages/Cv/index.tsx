@@ -42,6 +42,11 @@ const Cv: FC = () => {
                 <p> <span>2020</span> - partaking at the Artbox. Project(Barcelona)</p>
                 <p> <span>2021</span> - participating the Artbox. Project World 1.0</p>
                 <p> <span>2021</span> - participating at the joint exhibitions of plainting("Authmn Saloon") Lviv</p>
+                <p> <span>2021–2024</span> — Participant in the Lviv Autumn and Spring Salons</p>
+                <p> <span>2024</span> — Participant in ITSLIQUID International Art Fair, Venice, Italy (Palazzo Albrizzi-Capello)</p>
+                <p> <span>2024</span> — Group exhibition, Banderol Gallery, Lviv, Ukraine</p>
+                <p> <span>2025</span> — Participant in the exhibition “The Naked Truth”, Banderol Gallery, Lviv, Ukraine</p>
+                <p> <span>2025</span> - Solo exhibition, Madame Palmgren Gallery, Lviv, Ukraine</p> 
                 <p> <span>Now</span> - she lives and works in Lviv</p>
                 <br />
                 <p> <span>Nowadays, you can find her pictures in some private collections in USA, Russia, Poland, Canada and Italy.</span></p>
