@@ -1,63 +1,63 @@
 import { categoryAPI, pictureAPI } from 'api'
-import { 
-    GET_CATEGORIES, 
-    GET_PICTURE, 
-    GET_PICTURES,
+import {
+  GET_CATEGORIES,
+  GET_PICTURE,
+  GET_PICTURES,
 } from 'store/typeActions'
+import type { AppDispatch } from 'store'
 
-
-// CATEGORIES
-
-export const getCategories = () => async dispatch => {
-    await categoryAPI.categories()
-        .then(({data: { data }}) => {
-            dispatch({
-                type: GET_CATEGORIES,
-                payload: data 
-            })
-        })
-        .catch(({ response: { data: { data, error }}}) => {
-            dispatch({
-                type: GET_CATEGORIES,
-                payload: data 
-            })
-        })
-            
-} 
-
-// PICTURES
-
-export const getPictures = (category: string) => async dispatch => {
-    await pictureAPI.pictures()
-        .then(({data: {data}}) => {
-            dispatch({
-                type: GET_PICTURES,
-                payload: data,
-                category 
-            })
-            
-        })
-        .catch(({ response: { data: { data, error }}}) => {
-            dispatch({
-                type: GET_PICTURES,
-                payload: data,
-                category
-            })
-        })
+export const getCategories = () => async (dispatch: AppDispatch) => {
+  await categoryAPI
+    .categories()
+    .then(({ data: { data } }) => {
+      dispatch({
+        type: GET_CATEGORIES,
+        payload: data,
+      })
+    })
+    .catch((error) => {
+      const data = error?.response?.data?.data ?? []
+      dispatch({
+        type: GET_CATEGORIES,
+        payload: data,
+      })
+    })
 }
 
-export const getPicture = (id: string | number) => async dispatch => {
-        await pictureAPI.picture(id)
-            .then(({data: {data}}) => {
-                dispatch({
-                    type: GET_PICTURE,
-                    payload: data 
-                })
-            })
-            .catch(({ response: { data: { data, error }}}) => {
-                dispatch({
-                    type: GET_PICTURE,
-                    payload: data 
-                })
-            })
-    }
+export const getPictures = (category: string) => async (dispatch: AppDispatch) => {
+  await pictureAPI
+    .pictures()
+    .then(({ data: { data } }) => {
+      dispatch({
+        type: GET_PICTURES,
+        payload: data,
+        category,
+      })
+    })
+    .catch((error) => {
+      const data = error?.response?.data?.data ?? []
+      dispatch({
+        type: GET_PICTURES,
+        payload: data,
+        category,
+      })
+    })
+}
+
+export const getPicture = (id: string | number) => async (dispatch: AppDispatch) => {
+  await pictureAPI
+    .picture(id)
+    .then(({ data: { data } }) => {
+      dispatch({
+        type: GET_PICTURE,
+        payload: data,
+      })
+    })
+    .catch((error) => {
+      const data = error?.response?.data?.data ?? null
+      dispatch({
+        type: GET_PICTURE,
+        payload: data,
+      })
+    })
+}

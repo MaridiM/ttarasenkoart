@@ -1,47 +1,37 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "baseUrl": "src",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "importHelpers": false,
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "esnext",
-      "esnext.asynciterable"
-    ],
-    "module": "esnext",
-    "moduleResolution": "node",
+    "moduleDetection": "force",
     "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": false,
-    "noUnusedLocals": true,
-    "outDir": "build/bin",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "strictNullChecks": true,
-    // "suppressImplicitAnyIndexErrors": true,
-    "target": "es6"
+    "baseUrl": "src",
+    "paths": {
+      "api/*": ["api/*"],
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "config": ["config.ts"],
+      "data/*": ["data/*"],
+      "hooks/*": ["hooks/*"],
+      "pages/*": ["pages/*"],
+      "paths": ["paths.ts"],
+      "store/*": ["store/*"],
+      "styles/*": ["styles/*"]
+    }
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    "scripts",
-    "acceptance-tests",
-    "webpack",
-    "jest",
-  ]
+  "include": ["src", "vite.config.ts"]
 }
